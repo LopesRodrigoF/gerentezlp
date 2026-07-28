@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GerenteZ | Ordem Mínima, Resultado Máximo</title>
+    
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons para ícones modernos e limpos -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Configuração de cores e tipografia da "Regra dos 10%" -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            amber: '#F59E0B',   // O Destaque "Laser" (Âmbar/Mostarda Premium)
+                            slate: '#1E293B',   // A Estrutura (Chumbo Azulado / Slate Escuro)
+                            ice: '#F8FAFC',     // O Fundo Neutro (Cinza Gelo / Off-White)
+                            emerald: '#10B981', // Sucesso / Entradas
+                            red: '#EF4444'      // Alertas / Saídas
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],        // Textos gerais (Alta legibilidade)
+                        title: ['Lato', 'sans-serif'],         // Títulos de seções e cards
+                        display: ['Montserrat', 'sans-serif'], // Logo e números de impacto
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts (Montserrat, Lato, Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Lato', sans-serif; }
+        .font-display { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-brand-ice text-brand-slate antialiased selection:bg-brand-amber selection:text-white">
+
+    <!-- HEADER / NAVBAR (Visual Administrativo Limpo) -->
+    <header class="fixed w-full bg-white text-brand-slate z-50 shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-hammer text-brand-amber text-3xl"></i>
+                    <span class="font-display font-extrabold text-2xl tracking-tight text-brand-slate">Gerente<span class="text-brand-amber">Z</span></span>
+                </div>
+                <!-- Nav Links (Desktop) -->
+                <nav class="hidden md:flex space-x-8 font-title font-bold text-sm text-gray-600">
+                    <a href="#recursos" class="hover:text-brand-amber transition">O que o app faz</a>
+                    <a href="#diferenciais" class="hover:text-brand-amber transition">Por que escolher?</a>
+                    <a href="#preco" class="hover:text-brand-amber transition">Preço</a>
+                </nav>
+                <!-- CTA Button -->
+                <div>
+                    <a href="#preco" class="bg-brand-amber text-white px-6 py-2.5 rounded-lg font-title font-bold hover:bg-yellow-500 transition shadow-md hover:shadow-lg">
+                        Começar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (A "Ponta da Lança" - Alto Contraste) -->
+    <section class="pt-32 pb-20 bg-brand-slate text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="z-10">
+                    <div class="inline-block bg-brand-ice/10 px-4 py-2 rounded-full text-brand-amber font-title font-bold text-sm mb-6 border border-brand-amber/30">
+                        O "Martelo Digital" da Gestão
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 font-title">
+                        Menos tela, <span class="text-brand-amber">mais obra.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 font-light leading-relaxed">
+                        A ordem que o seu bolso precisa, com a simplicidade que o seu dia exige. Feito para profissionais que não têm tempo a perder com planilhas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <!-- Botão Grande "Laser" -->
+                        <a href="#preco" class="bg-brand-amber text-white px-8 py-4 rounded-xl font-title font-bold text-lg text-center hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                            Assinar por R$ 20/mês
+                        </a>
+                        <a href="#recursos" class="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-title font-bold text-lg text-center hover:bg-white/20 transition">
+                            Ver como funciona
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image/Mockup -->
+                <div class="relative hidden md:block">
+                    <!-- Placeholder de um profissional usando celular -->
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="Profissional usando o GerenteZ" class="rounded-2xl shadow-2xl border-4 border-brand-slate z-10 relative">
+                    <!-- Elemento decorativo -->
+                    <div class="absolute inset-0 bg-brand-amber rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECURSOS (V1) - Fundo 80% Neutro -->
+    <section id="recursos" class="py-24 bg-brand-ice">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-brand-slate mb-4 font-title">Resolva sua gestão em 30 segundos</h2>
+                <p class="text-xl text-gray-600">O GerenteZ é invisível: você organiza o trabalho rápido e volta para o que realmente importa.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
+                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
+                        <i class="ph ph-money text-3xl text-brand-amber"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Dinheiro no Bolso</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Lance entradas, saídas e anexe fotos de recibos na hora. Nunca mais perca um reembolso ou esqueça quanto lucrou de verdade em uma obra.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
+                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
+                        <i class="ph ph-kanban text-3xl text-brand-amber"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Projetos sem Bagunça</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Gerencie o status de todos os seus trabalhos (A fazer, Em andamento, Concluído) de forma visual, direta e sem planilhas complicadas.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
+                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
+                        <i class="ph ph-address-book text-3xl text-brand-amber"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Agenda Inteligente</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Sua lista de clientes a um toque de distância. Clique para abrir o WhatsApp do cliente ou iniciar a rota pelo GPS até o local do serviço.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-brand-slate text-white p-8 rounded-2xl border border-brand-slate relative overflow-hidden group shadow-lg">
+                    <div class="absolute top-0 right-0 p-8 opacity-5">
+                        <i class="ph-fill ph-chart-line-up text-9xl"></i>
+                    </div>
+                    <div class="bg-white/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ph ph-gauge text-3xl text-brand-amber"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-title">Resumo do Dia (Dashboard)</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed relative z-10">
+                        Um painel simplificado que mostra, num único relance, quanto você tem para receber hoje e onde é o seu próximo compromisso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="py-24 bg-white border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                
+                <div class="col-span-1 lg:col-span-3 text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4 font-title text-brand-slate">Por que o GerenteZ é diferente?</h2>
+                    <p class="text-gray-500 text-xl">Feito para a realidade do campo, com a inteligência do escritório.</p>
+                </div>
+
+                <!-- Dif 1 -->
+                <div class="text-center px-4">
+                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
+                        <i class="ph ph-wifi-slash text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">100% Offline-First</h4>
+                    <p class="text-gray-600">
+                        Funciona onde o sinal não chega. Registre tudo no subsolo ou na área rural; o app sincroniza sozinho quando você tiver internet.
+                    </p>
+                </div>
+
+                <!-- Dif 2 -->
+                <div class="text-center px-4">
+                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
+                        <i class="ph ph-hand-tap text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">Foco na "Mão Suja"</h4>
+                    <p class="text-gray-600">
+                        Interface limpa, botões grandes e sem anúncios pulando na tela. Feito para ser operado rapidamente com as mãos sujas de massa ou tinta.
+                    </p>
+                </div>
+
+                <!-- Dif 3 -->
+                <div class="text-center px-4">
+                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
+                        <i class="ph ph-handshake text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">Transparência Total</h4>
+                    <p class="text-gray-600">
+                        Sem planos confusos, sem letras miúdas. Você sabe exatamente o que recebe e o que paga. Somos parceiros de confiança do seu negócio.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PREÇO -->
+    <section id="preco" class="py-24 bg-brand-ice relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
+                <div class="grid md:grid-cols-5">
+                    
+                    <div class="md:col-span-3 p-10 md:p-12 bg-white">
+                        <h2 class="text-3xl font-black text-brand-slate mb-2 font-title">Plano Único. Sem Frescura.</h2>
+                        <p class="text-gray-500 mb-8 text-lg">O valor de um café com salgado por mês para profissionalizar de vez o seu negócio e parar de perder dinheiro.</p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-gray-700 font-medium">
+                                <!-- Semântica: Verde Esmeralda para indicar Sucesso -->
+                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Controle financeiro com fotos de recibos
+                            </li>
+                            <li class="flex items-center text-gray-700 font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Gestão visual de obras (Kanban)
+                            </li>
+                            <li class="flex items-center text-gray-700 font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Agenda integrada com GPS e WhatsApp
+                            </li>
+                            <li class="flex items-center text-gray-700 font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Funciona 100% sem internet
+                            </li>
+                            <li class="flex items-center text-gray-700 font-medium">
+                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Sem anúncios, sem letras miúdas
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="md:col-span-2 bg-brand-slate text-white p-10 md:p-12 flex flex-col justify-center items-center text-center">
+                        <p class="text-brand-amber font-title font-bold mb-2 uppercase tracking-widest text-sm">Apenas</p>
+                        <div class="flex items-start justify-center mb-6 font-display">
+                            <span class="text-2xl font-bold mt-2 mr-1 text-white/80">R$</span>
+                            <span class="text-7xl font-black text-white">20</span>
+                            <span class="text-xl text-white/60 self-end mb-2 ml-1">/mês</span>
+                        </div>
+                        <!-- CTA Principal - Laser -->
+                        <button class="w-full bg-brand-amber text-white py-4 px-6 rounded-xl font-title font-bold text-lg hover:bg-yellow-500 transition transform hover:-translate-y-1 shadow-lg">
+                            Assinar Agora
+                        </button>
+                        <p class="text-sm text-gray-400 mt-4"><i class="ph ph-lock mr-1"></i> Cancele quando quiser.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Prova Social) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-black text-center mb-12 font-title text-brand-slate">Quem usa no batente, aprova:</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
+                    <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
+                    <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"Antes eu perdia as notinhas da loja de material no painel da picape e esquecia de cobrar do cliente. Agora bato foto na hora, lanço no app sem internet mesmo, e fecho o mês no azul. Simples e direto."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-slate text-white rounded-full flex items-center justify-center font-display font-bold text-xl">
+                            C
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-slate font-title">Carlos Eduardo</p>
+                            <p class="text-sm text-gray-500">Mestre de Obras</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
+                    <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
+                    <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"O botão de abrir o GPS direto pro endereço do cliente já valeu os 20 reais. Não tem aquele monte de tela inútil que trava o celular. É abrir, ver o que tem pra fazer, e ir pro serviço."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-slate text-white rounded-full flex items-center justify-center font-display font-bold text-xl">
+                            R
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-slate font-title">Roberto S.</p>
+                            <p class="text-sm text-gray-500">Eletricista Instalador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-slate text-gray-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-hammer text-brand-amber text-2xl"></i>
+                    <span class="font-display font-bold text-xl text-white tracking-tight">Gerente<span class="text-brand-amber">Z</span></span>
+                </div>
+                
+                <!-- Direitos e Links -->
+                <div class="text-sm text-center md:text-left">
+                    <p>&copy; 2024 GerenteZ App. Todos os direitos reservados.</p>
+                </div>
+
+                <!-- Social / Contato -->
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo text-2xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="ph ph-whatsapp-logo text-2xl"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-xs text-center text-gray-500">
+                Feito para quem constrói o Brasil. Ordem Mínima, Resultado Máximo.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if(btn.innerText.includes('Assinar Agora')) {
+                    alert('Aqui você direcionaria o usuário para o checkout (Stripe, Mercado Pago, Pagar.me, etc.)');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

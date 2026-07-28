@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GerenteZ | Ordem Mínima, Resultado Máximo</title>
     
-    <!-- Tailwind CSS para estilização rápida e responsiva -->
+    <title>GerenteZ | Ordem Mínima, Resultado Máximo</title>
+    <meta name="description" content="A gestão de bolso para o profissional de campo. Chega da bagunça do WhatsApp. Controle clientes, despesas e prazos em 30 segundos.">
+    <meta name="keywords" content="aplicativo para pedreiro, gestão de obras, controle de gastos, aplicativo para marceneiro, micro-saas construção">
+    <meta name="author" content="GerenteZ">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gerentez.com.br/">
+    <meta property="og:title" content="GerenteZ | Ordem Mínima, Resultado Máximo">
+    <meta property="og:description" content="Chega da bagunça do WhatsApp. Controle seus clientes, gastos de material e prazos na palma da mão.">
+    <meta property="og:image" content="https://www.gerentez.com.br/capa-social.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GerenteZ | Ordem Mínima, Resultado Máximo">
+    <meta name="twitter:description" content="Chega da bagunça do WhatsApp. Controle seus clientes e gastos em 30 segundos.">
+    <meta name="twitter:image" content="https://www.gerentez.com.br/capa-social.jpg">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Phosphor Icons para ícones modernos e limpos -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Configuração de cores e tipografia da "Regra dos 10%" -->
     <script>
         tailwind.config = {
             theme: {
@@ -35,7 +47,6 @@
         }
     </script>
     
-    <!-- Google Fonts (Montserrat, Lato, Roboto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -45,25 +56,22 @@
         h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Lato', sans-serif; }
         .font-display { font-family: 'Montserrat', sans-serif; }
     </style>
-</head>
+
+    </head>
 <body class="bg-brand-ice text-brand-slate antialiased selection:bg-brand-amber selection:text-white">
 
-    <!-- HEADER / NAVBAR (Visual Administrativo Limpo) -->
     <header class="fixed w-full bg-white text-brand-slate z-50 shadow-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2">
                     <i class="ph-fill ph-hammer text-brand-amber text-3xl"></i>
                     <span class="font-display font-extrabold text-2xl tracking-tight text-brand-slate">Gerente<span class="text-brand-amber">Z</span></span>
                 </div>
-                <!-- Nav Links (Desktop) -->
                 <nav class="hidden md:flex space-x-8 font-title font-bold text-sm text-gray-600">
                     <a href="#recursos" class="hover:text-brand-amber transition">O que o app faz</a>
                     <a href="#diferenciais" class="hover:text-brand-amber transition">Por que escolher?</a>
                     <a href="#preco" class="hover:text-brand-amber transition">Preço</a>
                 </nav>
-                <!-- CTA Button -->
                 <div>
                     <a href="#preco" class="bg-brand-amber text-white px-6 py-2.5 rounded-lg font-title font-bold hover:bg-yellow-500 transition shadow-md hover:shadow-lg">
                         Começar Agora
@@ -73,11 +81,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (A "Ponta da Lança" - Alto Contraste) -->
     <section class="pt-32 pb-20 bg-brand-slate text-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
                 <div class="z-10">
                     <div class="inline-block bg-brand-ice/10 px-4 py-2 rounded-full text-brand-amber font-title font-bold text-sm mb-6 border border-brand-amber/30">
                         O "Martelo Digital" da Gestão
@@ -89,7 +95,6 @@
                         A ordem que o seu bolso precisa, com a simplicidade que o seu dia exige. Feito para profissionais que não têm tempo a perder com planilhas.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <!-- Botão Grande "Laser" -->
                         <a href="#preco" class="bg-brand-amber text-white px-8 py-4 rounded-xl font-title font-bold text-lg text-center hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(245,158,11,0.4)]">
                             Assinar por R$ 20/mês
                         </a>
@@ -99,18 +104,14 @@
                     </div>
                 </div>
                 
-                <!-- Image/Mockup -->
                 <div class="relative hidden md:block">
-                    <!-- Placeholder de um profissional usando celular -->
                     <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="Profissional usando o GerenteZ" class="rounded-2xl shadow-2xl border-4 border-brand-slate z-10 relative">
-                    <!-- Elemento decorativo -->
                     <div class="absolute inset-0 bg-brand-amber rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RECURSOS (V1) - Fundo 80% Neutro -->
     <section id="recursos" class="py-24 bg-brand-ice">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -119,7 +120,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Feature 1 -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
                     <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
                         <i class="ph ph-money text-3xl text-brand-amber"></i>
@@ -130,7 +130,6 @@
                     </p>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
                     <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
                         <i class="ph ph-kanban text-3xl text-brand-amber"></i>
@@ -141,7 +140,6 @@
                     </p>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
                     <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
                         <i class="ph ph-address-book text-3xl text-brand-amber"></i>
@@ -152,7 +150,6 @@
                     </p>
                 </div>
 
-                <!-- Feature 4 -->
                 <div class="bg-brand-slate text-white p-8 rounded-2xl border border-brand-slate relative overflow-hidden group shadow-lg">
                     <div class="absolute top-0 right-0 p-8 opacity-5">
                         <i class="ph-fill ph-chart-line-up text-9xl"></i>
@@ -169,7 +166,6 @@
         </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
     <section id="diferenciais" class="py-24 bg-white border-t border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-12">
@@ -179,7 +175,6 @@
                     <p class="text-gray-500 text-xl">Feito para a realidade do campo, com a inteligência do escritório.</p>
                 </div>
 
-                <!-- Dif 1 -->
                 <div class="text-center px-4">
                     <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
                         <i class="ph ph-wifi-slash text-4xl"></i>
@@ -190,7 +185,6 @@
                     </p>
                 </div>
 
-                <!-- Dif 2 -->
                 <div class="text-center px-4">
                     <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
                         <i class="ph ph-hand-tap text-4xl"></i>
@@ -201,7 +195,6 @@
                     </p>
                 </div>
 
-                <!-- Dif 3 -->
                 <div class="text-center px-4">
                     <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
                         <i class="ph ph-handshake text-4xl"></i>
@@ -216,7 +209,6 @@
         </div>
     </section>
 
-    <!-- PREÇO -->
     <section id="preco" class="py-24 bg-brand-ice relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
@@ -228,7 +220,6 @@
                         
                         <ul class="space-y-4 mb-8">
                             <li class="flex items-center text-gray-700 font-medium">
-                                <!-- Semântica: Verde Esmeralda para indicar Sucesso -->
                                 <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Controle financeiro com fotos de recibos
                             </li>
                             <li class="flex items-center text-gray-700 font-medium">
@@ -253,7 +244,6 @@
                             <span class="text-7xl font-black text-white">20</span>
                             <span class="text-xl text-white/60 self-end mb-2 ml-1">/mês</span>
                         </div>
-                        <!-- CTA Principal - Laser -->
                         <button class="w-full bg-brand-amber text-white py-4 px-6 rounded-xl font-title font-bold text-lg hover:bg-yellow-500 transition transform hover:-translate-y-1 shadow-lg">
                             Assinar Agora
                         </button>
@@ -265,12 +255,10 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS (Prova Social) -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-black text-center mb-12 font-title text-brand-slate">Quem usa no batente, aprova:</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Depoimento 1 -->
                 <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
                     <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
                     <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"Antes eu perdia as notinhas da loja de material no painel da picape e esquecia de cobrar do cliente. Agora bato foto na hora, lanço no app sem internet mesmo, e fecho o mês no azul. Simples e direto."</p>
@@ -285,7 +273,6 @@
                     </div>
                 </div>
 
-                <!-- Depoimento 2 -->
                 <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
                     <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
                     <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"O botão de abrir o GPS direto pro endereço do cliente já valeu os 20 reais. Não tem aquele monte de tela inútil que trava o celular. É abrir, ver o que tem pra fazer, e ir pro serviço."</p>
@@ -303,22 +290,18 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-brand-slate text-gray-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <!-- Logo -->
                 <div class="flex items-center gap-2">
                     <i class="ph-fill ph-hammer text-brand-amber text-2xl"></i>
                     <span class="font-display font-bold text-xl text-white tracking-tight">Gerente<span class="text-brand-amber">Z</span></span>
                 </div>
                 
-                <!-- Direitos e Links -->
                 <div class="text-sm text-center md:text-left">
                     <p>&copy; 2024 GerenteZ App. Todos os direitos reservados.</p>
                 </div>
 
-                <!-- Social / Contato -->
                 <div class="flex gap-4">
                     <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo text-2xl"></i></a>
                     <a href="#" class="hover:text-white transition"><i class="ph ph-whatsapp-logo text-2xl"></i></a>

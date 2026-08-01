@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <title>GerenteZ — medindo cada obra, cada real</title>
+
+  <defs>
+    <style>
+      /* Archivo subsetada apenas nos glifos usados e embutida, para a peca
+         nao depender de rede nem da fonte instalada no sistema. */
+      @font-face {
+        font-family: 'ArchivoGZ';
+        font-style: normal;
+        font-weight: 900;
+        font-stretch: 125%;
+        src: url(data:font/woff2;base64,d09GMgABAAAAAAR8ABAAAAAACIQAAAQiAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgUYcKAZgP1NUQVRaAGQRCAqDYIMACxIAATYCJAMgBCAFhQ4HIAwHG/gGyAQeiE39dxxJGVB1ZmJUjImqpJl+UQnX77cyNl00ilVCo0aeoIu3z2JJJaqkSqLSJJlE5lq/fKHWe+CmzawItI9rnQjA5CcoCBa89jOgU4RKKE2apTuEDOw2cjARR63i+SpaBvQaPhjNZ6ZBRUEThqKTUKNepTXN8LQYQ+fcP9xPaCbDJ5xc4AkrfyRRisb5vJYlCXIkFwlmvyiImC8EldOSEHl0BepiFJNFhCijq2ChnVTkTIK6lIvKfGChu0W8pxL/zNi/lddnY30b0MiPszIyW3IVi/ZysFsO1HSx3kKsmKwQohxWwWJQoM0IouxTZVDG9BzZVwgY06fvSPa06Dey20CRgEIhYvAieVRE4oAcWVohpcuZ8SoinkmYROiV5hqiUMnGMMK44xZNaU4muTi0X+u41A33S/eie8E95R53j7kHkR7R2gXCdQmlJFoo7LqIFoSO1eLHSw+G6vwSZVGlJL80S8eH6ppueILV7sGtnTate0mnXBvT8IRiEgz/5G7z88U0v99Y4PP50Kcdvn9bn//y4VGY6vMZC/xPhNBFsKK3PvvypeExeq3aty/amDZNSEPVe++/HKNPnQqGJ3SBz8fUly1ama11ZPCCK2La/t26GSxNEY6pGKKPKcLpGYx98beLOyo6+wJ3nu0L7Ass+T+wL/BuX8DBPvrhgS/b7dy+s8uPB3hiPHt25OTowZueZa1su94a3aBRt4Y/RR+L+bdITSdm4ZWScbXLpXcq0rxym/AmCeqzhTemLoxOm9il+LAI7KP+vBQnb9RaPaR8jPrVUV+jkAZfvysQUjnhP+yjTkbv+pX71Glap/+ROf/G9snP90/3JuWmRic9jvRS+9cil+pfKvIrcc0XXxp2IKT5kkvrDwCAOOjDjTqWtyd0Ca3zuyblV3n49v8k/Pe+q1E/3K0SaOH9Ws0jwXsp2EXh13LnIM2t8u/P3q8P96eaMhdbdsSWv1FW/ogtj2DLQcTKQcSJQqO2awwgiOaHOqLxeCKEw1cvphaA1F5RI7QIygjTohBCwCJpwOVltdziIYGdFi+lGG8OoQrNAuLShWpRFoFOBZEuK2aJJ4wYSwImuj+R+g5yGcIgujGYloykGwPpRw+aMpahOc096UVPGoGo2/4BtKEfPRlJX9pAuR996Bt7ZSQjGUotylOeEfRgOP3AMJIRlHutHwMpxxCG04fyZNGMdBqSzT3oSz9G02NHWy4L5db0YngPvx3CYCwqUY4KVKCi71ibLDLIpOWcehXlYh9GxdcNb7PeAmfL35jGoYxbI18/nRNUMHe3cOhLL6zejmUznCH0pxc9amNDRiFHUamPwKIEiqERgH3oVyqMorsEPQ6KovfXBjGYfnRnFCMoi8M4htKL8qNByQ+P8JvcgZRBaz0r3FlH1UU=) format('woff2');
+      }
+      @font-face {
+        font-family: 'ArchivoGZ';
+        font-style: normal;
+        font-weight: 600;
+        font-stretch: 100%;
+        src: url(data:font/woff2;base64,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) format('woff2');
+      }
+    </style>
+
+    <!-- Campo noturno: pontilhado branco discreto sobre chumbo -->
+    <pattern id="campoNoturno" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="#FFFFFF" opacity="0.06"/>
+    </pattern>
+
+    <!-- Regua: traco menor a cada 11px de origem, dobrado para esta peca -->
+    <pattern id="reguaMenor" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect x="0" y="10" width="4" height="12" fill="#FFFFFF" opacity="0.3"/>
+    </pattern>
+
+    <!-- Regua: traco maior ambar a cada 5 tracos -->
+    <pattern id="reguaMaior" width="104" height="22" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="4" height="22" fill="#FFB400"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#152C39"/>
+  <rect width="1200" height="630" fill="url(#campoNoturno)"/>
+
+  <!-- Simbolo: a trena, ambar sobre chumbo.
+       Malha de 96x96 escalada 2,9299x — traco proporcional, nunca afinado. -->
+  <g transform="translate(600 202.2) scale(2.9299)">
+    <circle cx="0" cy="0" r="34" fill="none" stroke="#FFB400" stroke-width="9"/>
+    <circle cx="0" cy="-34" r="6" fill="#FFB400"/>
+    <rect x="-4" y="-18" width="8" height="26" rx="3" fill="#FFB400"/>
+  </g>
+
+  <!-- Wordmark: Archivo 900, estendida 125%, caixa alta, com o Z ambar -->
+  <!-- x deslocado 11px: centraliza a mancha de tinta, nao a caixa de avanco
+       (o letter-spacing final e a lateral direita do Z puxariam o texto para a esquerda) -->
+  <text x="611" y="447" text-anchor="middle"
+        font-family="ArchivoGZ" font-size="96" font-weight="900"
+        font-stretch="125%" letter-spacing="1.92"
+        fill="#FFFFFF">GERENTE<tspan fill="#FFB400">Z</tspan></text>
+
+  <!-- Lema em branco a 55% -->
+  <text x="600" y="513" text-anchor="middle"
+        font-family="ArchivoGZ" font-size="48" font-weight="600"
+        fill="#FFFFFF" fill-opacity="0.55">medindo cada obra, cada real</text>
+
+  <!-- Faixa de regua ambar na borda inferior -->
+  <rect x="0" y="608" width="1200" height="22" fill="url(#reguaMenor)"/>
+  <rect x="0" y="608" width="1200" height="22" fill="url(#reguaMaior)"/>
+</svg>

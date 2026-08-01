@@ -767,19 +767,90 @@
                     </ul>
 
                     <!-- ============================================================
-                         AJUSTAR ANTES DE PUBLICAR
-                         Troque o action abaixo pelo endereço do seu serviço de lista
-                         (Mailchimp, Brevo, Formspree, Google Forms...). Enquanto o
-                         valor for "CONFIGURAR", o envio fica bloqueado por segurança.
+                         Lista de espera via FormSubmit.
+
+                         1) O PRIMEIRO envio dispara um e-mail de ativação para o
+                            admingerentez@gmail.com. É preciso clicar no link dele
+                            uma vez — só depois o formulário passa a entregar.
+
+                         2) DEPOIS DE ATIVAR: o FormSubmit gera um endereço aleatório
+                            (https://formsubmit.co/xxxxxxxxxxxx). Troque o action por
+                            ele. Assim o e-mail sai do código-fonte público e para de
+                            ser colhido por robôs de spam.
                          ============================================================ -->
-                    <form id="form-lista" class="flex flex-col sm:flex-row gap-3" method="post" action="CONFIGURAR">
-                        <label for="email-lista" class="sr-only">Seu e-mail</label>
-                        <input id="email-lista" name="email" type="email" required autocomplete="email"
-                               placeholder="seu@email.com.br"
-                               class="flex-1 bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
-                        <button type="submit" class="gz-btn shrink-0">Quero ser avisado</button>
+                    <form id="form-lista" method="POST"
+                          action="https://formsubmit.co/admingerentez@gmail.com">
+
+                        <input type="hidden" name="_subject" value="GerenteZ — nova inscrição na lista de espera">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://www.gerentez.com.br/?inscrito=1">
+                        <input type="hidden" name="_autoresponse" value="Beleza! Você entrou na lista do GerenteZ. No dia 1 de outubro a gente te avisa que abriu. Até lá, nada de spam. — Equipe GerenteZ">
+
+                        <!-- Isca para robôs: fica escondida, gente nunca preenche -->
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                               aria-hidden="true" class="hidden">
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+
+                            <div class="sm:col-span-2">
+                                <label for="campo-email" class="gz-rotulo text-gerente-tinta block mb-2">
+                                    Seu e-mail <span class="text-gerente-ambar-texto">(obrigatório)</span>
+                                </label>
+                                <input id="campo-email" name="email" type="email" required autocomplete="email"
+                                       placeholder="joao.pintor@email.com.br"
+                                       class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
+                            </div>
+
+                            <div>
+                                <label for="campo-profissao" class="gz-rotulo text-gerente-tinta block mb-2">
+                                    Sua profissão <span class="text-gerente-mudo">(se quiser)</span>
+                                </label>
+                                <select id="campo-profissao" name="profissao"
+                                        class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo focus:border-gerente-ambar outline-none">
+                                    <option value="">Prefiro não dizer</option>
+                                    <option>Pedreiro</option>
+                                    <option>Pintor</option>
+                                    <option>Eletricista</option>
+                                    <option>Encanador</option>
+                                    <option>Marceneiro</option>
+                                    <option>Montador</option>
+                                    <option>Jardineiro</option>
+                                    <option>Técnico de manutenção</option>
+                                    <option>Mestre de obras</option>
+                                    <option>Outro serviço</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="campo-whatsapp" class="gz-rotulo text-gerente-tinta block mb-2">
+                                    WhatsApp <span class="text-gerente-mudo">(se quiser)</span>
+                                </label>
+                                <input id="campo-whatsapp" name="whatsapp" type="tel" autocomplete="tel"
+                                       inputmode="tel" placeholder="(11) 90000-0000"
+                                       class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <button type="submit" class="gz-btn w-full sm:w-auto">
+                                    <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
+                                    Quero ser avisado
+                                </button>
+                            </div>
+
+                        </div>
                     </form>
+
                     <p id="aviso-lista" class="gz-rotulo text-gerente-mudo mt-4">Só o aviso do lançamento. Nada de spam.</p>
+
+                    <!-- Confirmação: aparece quando o FormSubmit devolve para ?inscrito=1 -->
+                    <div id="ok-lista" class="hidden items-start gap-4 bg-gerente-verde-fraco border border-gerente-verde/30 rounded-cartao p-6">
+                        <svg class="gz-i text-3xl text-gerente-verde-escuro shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
+                        <div>
+                            <p class="gz-titulo text-xl text-gerente-chumbo mb-1">Pronto, você está na lista.</p>
+                            <p class="text-gerente-tinta">No dia 1 de outubro a gente te avisa que o GerenteZ abriu. Até lá, nada de spam.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="gz-prancha p-8 sm:p-12 text-white border-t border-white/10">
@@ -836,18 +907,22 @@
     </footer>
 
     <script>
-        // Trava de segurança: impede envio enquanto a lista não tiver destino.
+        // Volta do FormSubmit: troca o formulário pela confirmação.
         (function () {
-            var form = document.getElementById('form-lista');
-            if (!form || form.getAttribute('action') !== 'CONFIGURAR') return;
+            if (!/[?&]inscrito=1/.test(location.search)) return;
 
-            form.addEventListener('submit', function (evento) {
-                evento.preventDefault();
-                var aviso = document.getElementById('aviso-lista');
-                aviso.textContent = 'Cadastro ainda não liberado. Volte em 1 de outubro.';
-                aviso.classList.remove('text-gerente-mudo');
-                aviso.classList.add('text-gerente-ambar-texto');
-            });
+            var form = document.getElementById('form-lista');
+            var aviso = document.getElementById('aviso-lista');
+            var ok = document.getElementById('ok-lista');
+            if (!form || !ok) return;
+
+            form.classList.add('hidden');
+            if (aviso) aviso.classList.add('hidden');
+            ok.classList.remove('hidden');
+            ok.classList.add('flex');
+            ok.setAttribute('tabindex', '-1');
+            ok.focus({ preventScroll: true });
+            ok.scrollIntoView({ block: 'center' });
         })();
 
         (function () {

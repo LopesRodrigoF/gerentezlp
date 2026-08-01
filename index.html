@@ -3,421 +3,904 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>GerenteZ | Ordem Mínima, Resultado Máximo</title>
-    <meta name="description" content="A gestão de bolso para o profissional de campo. Chega da bagunça do WhatsApp. Controle clientes, despesas e prazos em 30 segundos.">
-    <meta name="keywords" content="aplicativo para pedreiro, gestão de obras, controle de gastos, aplicativo para marceneiro, micro-saas construção">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6M711JHS3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E6M711JHS3');
+    </script>
+
+    <title>GerenteZ | Lançamento 1 de outubro</title>
+    <meta name="description" content="O escritório de bolso do prestador de serviço. Obras, clientes e caixa na palma da mão — e funciona sem internet no canteiro. Chega em 1 de outubro.">
+    <meta name="keywords" content="aplicativo para pedreiro, gestão de obras, controle de gastos, aplicativo para pintor, aplicativo para eletricista, orçamento de obra">
     <meta name="author" content="GerenteZ">
+    <meta name="theme-color" content="#152C39">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://www.gerentez.com.br/">
-    <meta property="og:title" content="GerenteZ | Ordem Mínima, Resultado Máximo">
-    <meta property="og:description" content="Chega da bagunça do WhatsApp. Controle seus clientes, gastos de material e prazos na palma da mão.">
-    <meta property="og:image" content="https://lopesrodrigof.github.io/gerentezld/capa-social.png">
+    <meta property="og:title" content="GerenteZ | Lançamento 1 de outubro">
+    <meta property="og:description" content="Obras, clientes e caixa em um lugar só. Funciona sem internet no canteiro. Entre na lista e comece grátis no lançamento.">
+    <meta property="og:image" content="https://www.gerentez.com.br/capa-social.png">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GerenteZ | Ordem Mínima, Resultado Máximo">
-    <meta name="twitter:description" content="Chega da bagunça do WhatsApp. Controle seus clientes e gastos em 30 segundos.">
-    <meta name="twitter:image" content="https://lopesrodrigof.github.io/gerentezld/capa-social.png">
-    
+    <meta name="twitter:title" content="GerenteZ | Lançamento 1 de outubro">
+    <meta name="twitter:description" content="Obras, clientes e caixa em um lugar só. Funciona sem internet no canteiro.">
+    <meta name="twitter:image" content="https://www.gerentez.com.br/capa-social.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            amber: '#F59E0B',   // O Destaque "Laser" (Âmbar/Mostarda Premium)
-                            slate: '#1E293B',   // A Estrutura (Chumbo Azulado / Slate Escuro)
-                            ice: '#F8FAFC',     // O Fundo Neutro (Cinza Gelo / Off-White)
-                            emerald: '#10B981', // Sucesso / Entradas
-                            red: '#EF4444'      // Alertas / Saídas
+                        gerente: {
+                            gelo:    '#F4F3EE',
+                            chumbo:  { DEFAULT: '#152C39', claro: '#24455A', fundo: '#0F222D' },
+                            ambar:   { DEFAULT: '#FFB400', escuro: '#E09E00', fraco: '#FEF3D6', texto: '#8A5B00' },
+                            verde:   { DEFAULT: '#0E8F62', escuro: '#0B7550', fraco: '#E4F3EA' },
+                            linha:   '#E4E2D9',
+                            trilho:  '#EBE9E0',
+                            tinta:   '#5C6B75',
+                            mudo:    '#8A9199',
+                            inativo: '#9AA2A8'
                         }
                     },
                     fontFamily: {
-                        sans: ['Roboto', 'sans-serif'],        // Textos gerais (Alta legibilidade)
-                        title: ['Lato', 'sans-serif'],         // Títulos de seções e cards
-                        display: ['Montserrat', 'sans-serif'], // Logo e números de impacto
+                        display: ['Archivo', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        sans:    ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
+                    },
+                    borderRadius: {
+                        chip:   '6px',
+                        selo:   '8px',
+                        icone:  '10px',
+                        ficha:  '12px',
+                        campo:  '14px',
+                        botao:  '16px',
+                        cartao: '18px',
+                        fab:    '20px',
+                        painel: '28px'
+                    },
+                    boxShadow: {
+                        card:  '0 1px 2px rgba(21,44,57,.05)',
+                        alto:  '0 4px 14px rgba(21,44,57,.2)',
+                        ambar: '0 6px 18px rgba(255,180,0,.4)',
+                        fab:   '0 8px 20px rgba(255,180,0,.45)',
+                        menu:  '0 12px 30px rgba(21,44,57,.25)'
                     }
                 }
             }
         }
     </script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+
     <style>
-        body { font-family: 'Roboto', sans-serif; }
-        h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Lato', sans-serif; }
-        .font-display { font-family: 'Montserrat', sans-serif; }
+        :root {
+            --gz-ambar:        #FFB400;
+            --gz-ambar-escuro: #E09E00;
+            --gz-ambar-fraco:  #FEF3D6;
+            --gz-ambar-texto:  #8A5B00;
+            --gz-chumbo:       #152C39;
+            --gz-chumbo-claro: #24455A;
+            --gz-chumbo-fundo: #0F222D;
+            --gz-gelo:         #F4F3EE;
+            --gz-verde:        #0E8F62;
+            --gz-verde-escuro: #0B7550;
+            --gz-verde-fraco:  #E4F3EA;
+            --gz-tinta:        #5C6B75;
+            --gz-mudo:         #8A9199;
+            --gz-linha:        #E4E2D9;
+            --gz-trilho:       #EBE9E0;
+
+            --gz-fonte-display: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --gz-fonte-corpo:   ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body { font-family: var(--gz-fonte-corpo); }
+        p { line-height: 1.6; }
+
+        /* Letreiro de obra: Archivo estendida, caixa alta. Nunca em parágrafo. */
+        .gz-display {
+            font-family: var(--gz-fonte-display);
+            font-stretch: 125%;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-weight: 900;
+        }
+
+        /* Archivo em caixa normal — títulos de cartão */
+        .gz-titulo {
+            font-family: var(--gz-fonte-display);
+            font-weight: 900;
+            letter-spacing: -0.015em;
+        }
+
+        /* Números de dinheiro e medida: alinhados em coluna. */
+        .gz-num {
+            font-family: var(--gz-fonte-display);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.01em;
+        }
+
+        /* Rótulo miúdo */
+        .gz-rotulo {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            line-height: 1.4;
+        }
+        @media (max-width: 640px) { .gz-rotulo { font-size: 10px; } }
+
+        /* ---- Botões ---- */
+        .gz-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            background: var(--gz-ambar);
+            color: var(--gz-chumbo);              /* NUNCA branco */
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            padding: 1rem 1.75rem;
+            border: 0; border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(255,180,0,.4);
+            cursor: pointer;
+            transition: background-color .2s, transform .1s;
+        }
+        .gz-btn:hover  { background: var(--gz-ambar-escuro); }
+        .gz-btn:active { transform: scale(.96); }
+
+        .gz-btn-2 {
+            display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+            background: #FFFFFF; color: var(--gz-chumbo);
+            border: 1.5px solid var(--gz-linha); border-radius: 16px;
+            font-weight: 700; padding: 1rem 1.75rem;
+            transition: border-color .2s;
+        }
+        .gz-btn-2:hover { border-color: var(--gz-chumbo); }
+
+        /* Variante do secundário sobre fundo escuro */
+        .gz-btn-2--escuro {
+            background: transparent; color: #FFFFFF;
+            border-color: rgba(255,255,255,.3);
+        }
+        .gz-btn-2--escuro:hover { border-color: var(--gz-ambar); color: var(--gz-ambar); }
+
+        /* ---- Texturas ---- */
+
+        /* §8.1 Régua — divisor de assinatura */
+        .gz-regua {
+            height: 11px;
+            background-repeat: repeat-x;
+            background-position: left bottom, left bottom;
+            background-image:
+                linear-gradient(90deg, #FFB400 0 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255,255,255,.3) 0 2px, transparent 2px);
+            background-size: 52px 11px, 11px 6px;
+        }
+        .gz-regua--claro {
+            background-image:
+                linear-gradient(90deg, #FFB400 0 2px, transparent 2px),
+                linear-gradient(90deg, rgba(21,44,57,.25) 0 2px, transparent 2px);
+        }
+
+        /* §8.2 Campo noturno */
+        .gz-noturno {
+            background-color: #152C39;
+            background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+
+        /* §8.3 Prancheta */
+        .gz-prancha {
+            background-color: #0F222D;
+            background-image:
+                linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+            background-size: 26px 26px;
+        }
+
+        /* §8.4 Trena — barra de progresso, um risco a cada 10% */
+        .gz-trena {
+            position: relative;
+            height: 12px;
+            border-radius: 999px;
+            overflow: hidden;
+            background-color: var(--gz-trilho);
+        }
+        .gz-trena > span {
+            display: block; height: 100%;
+            background: var(--gz-ambar);
+            border-radius: 999px;
+        }
+        .gz-trena > span[data-cheia] { background: var(--gz-verde); }
+        .gz-trena::after {
+            content: "";
+            position: absolute; inset: 0;
+            background-image: linear-gradient(90deg, rgba(21,44,57,.22) 0 1.5px, transparent 1.5px);
+            background-size: 10% 100%;
+            pointer-events: none;
+        }
+
+        /* Ícones Lucide embutidos (traço 2,2px, cantos arredondados) */
+        .gz-i {
+            width: 1em; height: 1em;
+            fill: none; stroke: currentColor;
+            stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+            flex: none;
+        }
+
+        section[id] { scroll-margin-top: 6rem; }
+
+        ::selection { background: var(--gz-ambar-fraco); color: var(--gz-chumbo); }
+
+        /* §10.5 Acessibilidade obrigatória */
+        :focus-visible { outline: 2px solid var(--gz-ambar); outline-offset: 2px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
     </style>
 
-    </head>
-<body class="bg-brand-ice text-brand-slate antialiased selection:bg-brand-amber selection:text-white">
+</head>
+<body class="bg-gerente-gelo text-gerente-chumbo antialiased">
 
-    <header class="fixed w-full bg-white text-brand-slate z-50 shadow-sm border-b border-gray-200">
+    <!-- Biblioteca de ícones Lucide, embutida para não depender de rede -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-capacete" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></symbol>
+            <symbol id="i-cifrao" viewBox="0 0 24 24"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+            <symbol id="i-pessoas" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+            <symbol id="i-calendario" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+            <symbol id="i-documento" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></symbol>
+            <symbol id="i-casa" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+            <symbol id="i-sem-sinal" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></symbol>
+            <symbol id="i-toque" viewBox="0 0 24 24"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+            <symbol id="i-mensagem" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+            <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></symbol>
+            <symbol id="i-mais" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+            <symbol id="i-alta" viewBox="0 0 24 24"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></symbol>
+            <symbol id="i-bussola" viewBox="0 0 24 24"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></symbol>
+            <symbol id="i-alvo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+            <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></symbol>
+            <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-raio" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+            <symbol id="i-maos" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+            <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+            <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+
+            <!-- Símbolo da marca: a trena -->
+            <symbol id="i-trena" viewBox="0 0 96 96">
+                <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="9"/>
+                <circle cx="48" cy="14" r="6" fill="currentColor" stroke="none"/>
+                <rect x="44" y="30" width="8" height="26" rx="3" fill="currentColor" stroke="none"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <header class="fixed w-full bg-gerente-gelo/95 backdrop-blur z-50 border-b border-gerente-linha">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <i class="ph-fill ph-hammer text-brand-amber text-3xl"></i>
-                    <span class="font-display font-extrabold text-2xl tracking-tight text-brand-slate">Gerente<span class="text-brand-amber">Z</span></span>
-                </div>
-                <nav class="hidden md:flex space-x-8 font-title font-bold text-sm text-gray-600">
-                    <a href="#recursos" class="hover:text-brand-amber transition">O que o app faz</a>
-                    <a href="#diferenciais" class="hover:text-brand-amber transition">Por que escolher?</a>
-                    <a href="#proposito" class="hover:text-brand-amber transition">Nossa Filosofia</a>
-                    <a href="#preco" class="hover:text-brand-amber transition">Preço</a>
+
+                <a href="#" class="flex items-center gap-2.5 shrink-0" aria-label="GerenteZ, página inicial">
+                    <svg class="w-8 h-8 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
+                    <span class="gz-display text-xl sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-gerente-tinta">
+                    <a href="#recursos" class="border-b-2 border-transparent hover:border-gerente-ambar hover:text-gerente-chumbo pb-1 transition">O que faz</a>
+                    <a href="#diferenciais" class="border-b-2 border-transparent hover:border-gerente-ambar hover:text-gerente-chumbo pb-1 transition">Por que o GerenteZ</a>
+                    <a href="#filosofia" class="border-b-2 border-transparent hover:border-gerente-ambar hover:text-gerente-chumbo pb-1 transition">Filosofia</a>
+                    <a href="#lancamento" class="border-b-2 border-transparent hover:border-gerente-ambar hover:text-gerente-chumbo pb-1 transition">Lançamento</a>
                 </nav>
-                <div>
-                    <a href="https://app.gerentez.com.br/cadastro" class="bg-brand-amber text-white px-6 py-2.5 rounded-lg font-title font-bold hover:bg-yellow-500 transition shadow-md hover:shadow-lg">
-                        Começar Agora
-                    </a>
-                </div>
+
+                <a href="#lancamento" class="gz-btn text-[15px] sm:text-base !py-3 !px-5 sm:!px-6">
+                    <span class="sm:hidden">Avise-me</span>
+                    <span class="hidden sm:inline">Quero ser avisado</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <section class="pt-32 pb-20 bg-brand-slate text-white overflow-hidden">
+    <!-- ================= HERO ================= -->
+    <section class="gz-noturno relative pt-32 pb-24 text-white overflow-hidden">
+        <div class="absolute -top-32 -right-24 w-[28rem] h-[28rem] bg-gerente-ambar/10 rounded-full blur-3xl pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="z-10">
-                    <div class="inline-block bg-brand-ice/10 px-4 py-2 rounded-full text-brand-amber font-title font-bold text-sm mb-6 border border-brand-amber/30">
-                        O "Martelo Digital" da Gestão
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 font-title">
-                        Menos tela, <span class="text-brand-amber">mais obra.</span>
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+                <div>
+                    <p class="inline-flex items-center gap-2 gz-rotulo text-gerente-ambar bg-gerente-ambar/15 border border-gerente-ambar/40 rounded-selo px-3 py-2 mb-6">
+                        <svg class="gz-i text-base" aria-hidden="true"><use href="#i-calendario"/></svg>
+                        Lançamento · 1 de outubro de 2026
+                    </p>
+
+                    <h1 class="gz-display text-[34px] sm:text-5xl xl:text-[56px] leading-[1.05] mb-4">
+                        Menos tela,<br>mais obra.
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-300 mb-8 font-light leading-relaxed">
-                        A ordem que o seu bolso precisa, com a simplicidade que o seu dia exige. Feito para profissionais que não têm tempo a perder com planilhas.
+
+                    <p class="text-white/55 font-semibold text-lg mb-6">medindo cada obra, cada real</p>
+
+                    <p class="text-white/75 text-[17px] sm:text-[19px] mb-9 max-w-xl">
+                        O escritório de bolso do prestador de serviço. Obras, clientes e caixa em um lugar só — e funciona mesmo sem sinal no canteiro.
                     </p>
+
+                    <!-- Contagem regressiva -->
+                    <div id="contagem" class="grid grid-cols-4 gap-2 sm:gap-3 max-w-md mb-9">
+                        <div class="bg-white/[.07] border border-white/15 rounded-ficha py-3 text-center">
+                            <span data-conta="dias" class="gz-num block text-3xl sm:text-4xl font-black text-gerente-ambar">--</span>
+                            <span class="gz-rotulo text-white/60">dias</span>
+                        </div>
+                        <div class="bg-white/[.07] border border-white/15 rounded-ficha py-3 text-center">
+                            <span data-conta="horas" class="gz-num block text-3xl sm:text-4xl font-black text-gerente-ambar">--</span>
+                            <span class="gz-rotulo text-white/60">horas</span>
+                        </div>
+                        <div class="bg-white/[.07] border border-white/15 rounded-ficha py-3 text-center">
+                            <span data-conta="min" class="gz-num block text-3xl sm:text-4xl font-black text-gerente-ambar">--</span>
+                            <span class="gz-rotulo text-white/60">min</span>
+                        </div>
+                        <div class="bg-white/[.07] border border-white/15 rounded-ficha py-3 text-center">
+                            <span data-conta="seg" class="gz-num block text-3xl sm:text-4xl font-black text-gerente-ambar">--</span>
+                            <span class="gz-rotulo text-white/60">seg</span>
+                        </div>
+                    </div>
+
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://app.gerentez.com.br/cadastro" class="bg-brand-amber text-white px-8 py-4 rounded-xl font-title font-bold text-lg text-center hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(245,158,11,0.4)]">
-                            Assinar por R$ 20/mês
+                        <a href="#lancamento" class="gz-btn text-base">
+                            <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
+                            Quero ser avisado
                         </a>
-                        <a href="#recursos" class="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-title font-bold text-lg text-center hover:bg-white/20 transition">
-                            Ver como funciona
-                        </a>
+                        <a href="#recursos" class="gz-btn-2 gz-btn-2--escuro text-base">Ver o que o app faz</a>
+                    </div>
+
+                    <ul class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-9 text-sm font-semibold text-white/75">
+                        <li class="flex items-center gap-2"><svg class="gz-i text-lg text-gerente-ambar" aria-hidden="true"><use href="#i-sem-sinal"/></svg> Funciona sem internet</li>
+                        <li class="flex items-center gap-2"><svg class="gz-i text-lg text-gerente-ambar" aria-hidden="true"><use href="#i-toque"/></svg> Feito para usar de dedo sujo</li>
+                        <li class="flex items-center gap-2"><svg class="gz-i text-lg text-gerente-ambar" aria-hidden="true"><use href="#i-mensagem"/></svg> Fala WhatsApp e Maps</li>
+                    </ul>
+                </div>
+
+                <!-- Mockup na moldura de prancheta -->
+                <div class="gz-prancha rounded-painel p-5 sm:p-7 border border-white/10 shadow-menu">
+                    <div class="relative bg-white text-gerente-chumbo rounded-cartao p-6 sm:p-7 border border-gerente-linha shadow-alto">
+
+                        <div class="flex items-start justify-between gap-4 mb-6">
+                            <div>
+                                <span class="gz-rotulo text-gerente-mudo block mb-2">Lucro da obra</span>
+                                <span class="gz-num block text-[32px] sm:text-[44px] font-black leading-none text-gerente-chumbo">R$ 4.280,00</span>
+                                <span class="gz-num flex items-center gap-1.5 text-sm font-bold text-gerente-verde-escuro mt-2">
+                                    <svg class="gz-i text-base" aria-hidden="true"><use href="#i-alta"/></svg>
+                                    R$ 1.150,00 esta semana
+                                </span>
+                            </div>
+                            <span class="gz-rotulo bg-gerente-gelo text-gerente-tinta border border-gerente-linha rounded-selo px-2.5 py-1.5 whitespace-nowrap">Hoje</span>
+                        </div>
+
+                        <div class="h-px bg-gerente-linha mb-6"></div>
+
+                        <span class="gz-rotulo text-gerente-mudo block mb-4">Suas obras</span>
+
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex items-center justify-between gap-3 mb-2.5">
+                                    <p class="gz-titulo text-[15px] truncate flex items-center gap-2">
+                                        <svg class="gz-i text-lg text-gerente-tinta" aria-hidden="true"><use href="#i-capacete"/></svg>
+                                        Reforma — Ap. 302
+                                    </p>
+                                    <span class="gz-rotulo inline-flex items-center gap-1 bg-gerente-ambar-fraco text-gerente-ambar-texto rounded-selo px-2 py-1 whitespace-nowrap">
+                                        <svg class="gz-i text-sm" aria-hidden="true"><use href="#i-capacete"/></svg> Em obra
+                                    </span>
+                                </div>
+                                <div class="gz-trena"><span style="width:60%"></span></div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between gap-3 mb-2.5">
+                                    <p class="gz-titulo text-[15px] truncate flex items-center gap-2">
+                                        <svg class="gz-i text-lg text-gerente-tinta" aria-hidden="true"><use href="#i-capacete"/></svg>
+                                        Elétrica — Casa Vila Nova
+                                    </p>
+                                    <span class="gz-rotulo inline-flex items-center gap-1 bg-gerente-verde-fraco text-gerente-verde-escuro rounded-selo px-2 py-1 whitespace-nowrap">
+                                        <svg class="gz-i text-sm" aria-hidden="true"><use href="#i-check"/></svg> Concluída
+                                    </span>
+                                </div>
+                                <div class="gz-trena"><span data-cheia style="width:100%"></span></div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-6 right-6 w-14 h-14 bg-gerente-ambar text-gerente-chumbo rounded-fab flex items-center justify-center shadow-fab" aria-hidden="true">
+                            <svg class="gz-i text-2xl"><use href="#i-mais"/></svg>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="relative hidden md:block">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="Profissional usando o GerenteZ" class="rounded-2xl shadow-2xl border-4 border-brand-slate z-10 relative">
-                    <div class="absolute inset-0 bg-brand-amber rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="recursos" class="py-24 bg-brand-ice">
+    <div class="gz-regua" aria-hidden="true"></div>
+
+    <!-- ================= O QUE FAZ ================= -->
+    <section id="recursos" class="py-24 bg-gerente-gelo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-black text-brand-slate mb-4 font-title">Resolva sua gestão em 30 segundos</h2>
-                <p class="text-xl text-gray-600">O GerenteZ é invisível: você organiza o trabalho rápido e volta para o que realmente importa.</p>
-            </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
-                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
-                        <i class="ph ph-money text-3xl text-brand-amber"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Dinheiro no Bolso</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Lance entradas, saídas e anexe fotos de recibos na hora. Nunca mais perca um reembolso ou esqueça quanto lucrou de verdade em uma obra.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
-                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
-                        <i class="ph ph-kanban text-3xl text-brand-amber"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Projetos sem Bagunça</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Gerencie o status de todos os seus trabalhos (A fazer, Em andamento, Concluído) de forma visual, direta e sem planilhas complicadas.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-amber transition group">
-                    <div class="bg-brand-slate/5 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-amber/10 transition">
-                        <i class="ph ph-address-book text-3xl text-brand-amber"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 font-title text-brand-slate">Agenda Inteligente</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        Sua lista de clientes a um toque de distância. Clique para abrir o WhatsApp do cliente ou iniciar a rota pelo GPS até o local do serviço.
-                    </p>
-                </div>
-
-                <div class="bg-brand-slate text-white p-8 rounded-2xl border border-brand-slate relative overflow-hidden group shadow-lg">
-                    <div class="absolute top-0 right-0 p-8 opacity-5">
-                        <i class="ph-fill ph-chart-line-up text-9xl"></i>
-                    </div>
-                    <div class="bg-white/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <i class="ph ph-gauge text-3xl text-brand-amber"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 font-title">Resumo do Dia (Dashboard)</h3>
-                    <p class="text-gray-300 text-lg leading-relaxed relative z-10">
-                        Um painel simplificado que mostra, num único relance, quanto você tem para receber hoje e onde é o seu próximo compromisso.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="diferenciais" class="py-24 bg-white border-t border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                
-                <div class="col-span-1 lg:col-span-3 text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-black mb-4 font-title text-brand-slate">Por que o GerenteZ é diferente?</h2>
-                    <p class="text-gray-500 text-xl">Feito para a realidade do campo, com a inteligência do escritório.</p>
-                </div>
-
-                <div class="text-center px-4">
-                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
-                        <i class="ph ph-wifi-slash text-4xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">100% Offline-First</h4>
-                    <p class="text-gray-600">
-                        Funciona onde o sinal não chega. Registre tudo no subsolo ou na área rural; o app sincroniza sozinho quando você tiver internet.
-                    </p>
-                </div>
-
-                <div class="text-center px-4">
-                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
-                        <i class="ph ph-hand-tap text-4xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">Foco na "Mão Suja"</h4>
-                    <p class="text-gray-600">
-                        Interface limpa, botões grandes e sem anúncios pulando na tela. Feito para ser operado rapidamente com as mãos sujas de massa ou tinta.
-                    </p>
-                </div>
-
-                <div class="text-center px-4">
-                    <div class="bg-brand-ice border border-gray-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-amber">
-                        <i class="ph ph-handshake text-4xl"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4 font-title text-brand-slate">Transparência Total</h4>
-                    <p class="text-gray-600">
-                        Sem planos confusos, sem letras miúdas. Você sabe exatamente o que recebe e o que paga. Somos parceiros de confiança do seu negócio.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="proposito" class="py-24 bg-brand-slate text-white relative overflow-hidden">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-amber/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-emerald/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block bg-white/10 text-brand-amber px-4 py-1.5 rounded-full font-title font-bold text-xs uppercase tracking-widest mb-4 border border-brand-amber/30">
-                    Nossa Filosofia
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black mb-6 font-title tracking-tight">
-                    Nascemos na poeira da obra, não num escritório de gravata.
-                </h2>
-                <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-                    Entendemos na pele o valor de cada hora trabalhada no trecho. O GerenteZ não foi feito para burocratizar, foi feito para libertar você do caos.
+            <div class="max-w-3xl mb-14">
+                <span class="gz-rotulo text-gerente-mudo block mb-3">O que o app faz</span>
+                <h2 class="gz-display text-[26px] sm:text-4xl mb-4">Organize suas obras em um lugar só</h2>
+                <p class="text-gerente-tinta text-[17px] sm:text-[22px] font-semibold">
+                    Substitui o caderno, o bloco de orçamento e o grupo de WhatsApp bagunçado.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-brand-amber transition duration-300 backdrop-blur-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-brand-amber/20 text-brand-amber rounded-xl flex items-center justify-center text-3xl mb-6 border border-brand-amber/30">
-                            <i class="ph-fill ph-compass"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-title mb-4 text-white">Nosso Propósito</h3>
-                        <p class="text-gray-300 leading-relaxed font-light">
-                            Eliminar a bagunça operacional e financeira na vida do trabalhador de campo. Garantir que nenhuma nota fiscal seja perdida, nenhum cliente esquecido e nenhum centavo de lucro deixado para trás.
-                        </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-capacete"/></svg>
                     </div>
+                    <h3 class="gz-titulo text-xl mb-2">Quanto sobrou da obra</h3>
+                    <p class="text-gerente-tinta">
+                        Cada obra tem o seu caixa. Lance material, mão de obra e recebimento — o lucro sai calculado sozinho, sem planilha.
+                    </p>
                 </div>
 
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-brand-amber transition duration-300 backdrop-blur-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-brand-emerald/20 text-brand-emerald rounded-xl flex items-center justify-center text-3xl mb-6 border border-brand-emerald/30">
-                            <i class="ph-fill ph-target"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-title mb-4 text-white">Nossa Missão</h3>
-                        <p class="text-gray-300 leading-relaxed font-light">
-                            Entregar o "Martelo Digital": um aplicativo de gestão ultra-enxuto, resistente, fácil de usar com uma mão só e 100% funcional sem internet, exigindo apenas 30 segundos do seu dia.
-                        </p>
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-cifrao"/></svg>
                     </div>
+                    <h3 class="gz-titulo text-xl mb-2">Entrou e saiu</h3>
+                    <p class="text-gerente-tinta">
+                        Sinal, parcela, compra na loja de material. Registre na hora, com foto da nota, e nunca mais pergunte "o cliente já me pagou?".
+                    </p>
                 </div>
 
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-brand-amber transition duration-300 backdrop-blur-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-3xl mb-6 border border-blue-500/30">
-                            <i class="ph-fill ph-eye"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-title mb-4 text-white">Nossa Visão</h3>
-                        <p class="text-gray-300 leading-relaxed font-light">
-                            Ser o sistema de bolso indispensável para cada pedreiro, marceneiro, eletricista, pintor e instalador do Brasil, provando que tecnologia útil deve ser simples, rápida e justa no preço.
-                        </p>
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-documento"/></svg>
                     </div>
+                    <h3 class="gz-titulo text-xl mb-2">Orçamento em 2 minutos</h3>
+                    <p class="text-gerente-tinta">
+                        Digite os itens, o app soma. Sai pronto para mandar — chega de papel escrito à mão e foto tremida no WhatsApp.
+                    </p>
                 </div>
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-pessoas"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-xl mb-2">Seus clientes</h3>
+                    <p class="text-gerente-tinta">
+                        Cadastro com WhatsApp e endereço. Um toque abre a conversa, outro abre a rota — sem caçar o telefone entre 400 contatos.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-calendario"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-xl mb-2">Agenda do dia</h3>
+                    <p class="text-gerente-tinta">
+                        O que tem para hoje, onde é e a que horas. Abre o mapa direto no endereço do serviço.
+                    </p>
+                </div>
+
+                <div class="bg-gerente-chumbo text-white rounded-cartao border border-gerente-chumbo shadow-alto p-6">
+                    <div class="w-12 h-12 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-casa"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-xl mb-2 text-white">Visão geral</h3>
+                    <p class="text-white/75">
+                        Uma tela que abre e responde: quanto tem para receber, qual obra está parada e para onde você vai agora.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ANTES / DEPOIS ================= -->
+    <section class="py-24 bg-white border-t border-gerente-linha">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-12">
+                <span class="gz-rotulo text-gerente-mudo block mb-3">O dia a dia muda assim</span>
+                <h2 class="gz-display text-[26px] sm:text-4xl">Do caderno para o bolso</h2>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
-                <h3 class="text-2xl md:text-3xl font-black font-title text-center text-white mb-10">
-                    Nossos Valores Inegociáveis ⚒️
-                </h3>
+            <div class="grid sm:grid-cols-2 gap-3 gz-rotulo text-gerente-mudo mb-4">
+                <span class="flex items-center gap-2"><svg class="gz-i text-base" aria-hidden="true"><use href="#i-x"/></svg> Antes</span>
+                <span class="hidden sm:flex items-center gap-2 text-gerente-ambar-texto"><svg class="gz-i text-base" aria-hidden="true"><use href="#i-check"/></svg> Com o GerenteZ</span>
+            </div>
+
+            <div class="space-y-3">
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <p class="bg-gerente-gelo border border-gerente-linha rounded-ficha p-4 text-gerente-tinta flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-inativo mt-0.5" aria-hidden="true"><use href="#i-x"/></svg>
+                        "Quanto sobrou dessa obra mesmo?"
+                    </p>
+                    <p class="bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-ficha p-4 text-gerente-chumbo font-semibold flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-ambar-texto mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                        Lucro por obra calculado sozinho
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <p class="bg-gerente-gelo border border-gerente-linha rounded-ficha p-4 text-gerente-tinta flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-inativo mt-0.5" aria-hidden="true"><use href="#i-x"/></svg>
+                        Orçamento escrito à mão, foto tremida no WhatsApp
+                    </p>
+                    <p class="bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-ficha p-4 text-gerente-chumbo font-semibold flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-ambar-texto mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                        Orçamento digitado em 2 minutos, enviado pronto
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <p class="bg-gerente-gelo border border-gerente-linha rounded-ficha p-4 text-gerente-tinta flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-inativo mt-0.5" aria-hidden="true"><use href="#i-x"/></svg>
+                        "O cliente já me pagou o sinal?"
+                    </p>
+                    <p class="bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-ficha p-4 text-gerente-chumbo font-semibold flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-ambar-texto mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                        Entradas e saídas registradas por obra
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <p class="bg-gerente-gelo border border-gerente-linha rounded-ficha p-4 text-gerente-tinta flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-inativo mt-0.5" aria-hidden="true"><use href="#i-x"/></svg>
+                        Telefone perdido no meio de 400 contatos
+                    </p>
+                    <p class="bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-ficha p-4 text-gerente-chumbo font-semibold flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-ambar-texto mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                        Cadastro com WhatsApp e rota em um toque
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <p class="bg-gerente-gelo border border-gerente-linha rounded-ficha p-4 text-gerente-tinta flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-inativo mt-0.5" aria-hidden="true"><use href="#i-x"/></svg>
+                        Sem sinal na obra = sem app
+                    </p>
+                    <p class="bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-ficha p-4 text-gerente-chumbo font-semibold flex gap-3">
+                        <svg class="gz-i text-xl text-gerente-ambar-texto mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                        Funciona offline e sincroniza sozinho depois
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DIFERENCIAIS ================= -->
+    <section id="diferenciais" class="py-24 bg-gerente-gelo border-t border-gerente-linha">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="max-w-3xl mb-14">
+                <span class="gz-rotulo text-gerente-mudo block mb-3">Por que o GerenteZ</span>
+                <h2 class="gz-display text-[26px] sm:text-4xl mb-4">Três coisas que ninguém mais faz direito</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-chumbo text-gerente-ambar flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-sem-sinal"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3">Funciona offline</h3>
+                    <p class="text-gerente-tinta">
+                        Canteiro de obra tem cimento, não tem 5G. Salva no aparelho na hora e envia sozinho quando a conexão volta.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-chumbo text-gerente-ambar flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-toque"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3">Rápido de usar de dedo sujo</h3>
+                    <p class="text-gerente-tinta">
+                        Poucos campos obrigatórios, botão grande e tudo em português de gente. Sem termo em inglês, sem tela inútil.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-cartao border border-gerente-linha shadow-card p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-chumbo text-gerente-ambar flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-mapa"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3">Fala WhatsApp e Google Maps</h3>
+                    <p class="text-gerente-tinta">
+                        Não tenta substituir o que você já usa. Manda a mensagem e abre a rota com um toque, direto do cadastro do cliente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FILOSOFIA ================= -->
+    <section id="filosofia" class="gz-noturno py-24 text-white relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-gerente-ambar/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-gerente-verde/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+            <div class="max-w-3xl mb-14">
+                <span class="gz-rotulo text-gerente-ambar block mb-3">Nossa filosofia</span>
+                <h2 class="gz-display text-[26px] sm:text-4xl mb-5 leading-[1.15]">
+                    Nascemos na poeira da obra, não num escritório de gravata
+                </h2>
+                <p class="text-white/75 text-[17px] sm:text-[22px] font-semibold">
+                    Entendemos o valor de cada hora trabalhada no trecho. O GerenteZ não veio burocratizar — veio tirar você do caos.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-14">
+
+                <div class="bg-white/[.06] border border-white/15 rounded-cartao p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-bussola"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3 text-white">Propósito</h3>
+                    <p class="text-white/75">
+                        Acabar com a bagunça operacional e financeira de quem trabalha em campo. Nenhuma nota perdida, nenhum cliente esquecido, nenhum centavo deixado para trás.
+                    </p>
+                </div>
+
+                <div class="bg-white/[.06] border border-white/15 rounded-cartao p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-alvo"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3 text-white">Missão</h3>
+                    <p class="text-white/75">
+                        Entregar um app enxuto, resistente, que se usa com uma mão só e funciona sem internet — e que pede poucos minutos do seu dia.
+                    </p>
+                </div>
+
+                <div class="bg-white/[.06] border border-white/15 rounded-cartao p-7">
+                    <div class="w-14 h-14 rounded-icone bg-gerente-ambar text-gerente-chumbo flex items-center justify-center mb-5">
+                        <svg class="gz-i text-3xl" aria-hidden="true"><use href="#i-olho"/></svg>
+                    </div>
+                    <h3 class="gz-titulo text-2xl mb-3 text-white">Visão</h3>
+                    <p class="text-white/75">
+                        Ser o escritório de bolso de cada pintor, montador, pedreiro, eletricista e encanador do Brasil — provando que tecnologia útil é simples e justa.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bg-white/[.06] border border-white/15 rounded-painel p-8 md:p-12">
+                <h3 class="gz-display text-xl sm:text-3xl text-center mb-10">Nossos valores inegociáveis</h3>
+
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-brand-amber font-title font-bold text-lg">
-                            <i class="ph-fill ph-hands-clapping text-2xl"></i>
-                            <span>Respeito à Lida</span>
+                    <div>
+                        <div class="flex items-center gap-3 text-gerente-ambar gz-titulo text-lg mb-3">
+                            <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-maos"/></svg>
+                            <span>Respeito à lida</span>
                         </div>
-                        <p class="text-sm text-gray-300 font-light leading-relaxed">
-                            Desenhado para quem tem dedos grossos e mãos sujas de massa. Botões grandes, sem poluição e sem termos em inglês difíceis.
+                        <p class="text-sm text-white/75">
+                            Desenhado para quem tem dedo grosso e mão suja de massa. Botão grande, tela limpa, tudo em português de gente.
                         </p>
                     </div>
 
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-brand-amber font-title font-bold text-lg">
-                            <i class="ph-fill ph-shield-check text-2xl"></i>
-                            <span>Papo Reto</span>
+                    <div>
+                        <div class="flex items-center gap-3 text-gerente-ambar gz-titulo text-lg mb-3">
+                            <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-escudo"/></svg>
+                            <span>Papo reto</span>
                         </div>
-                        <p class="text-sm text-gray-300 font-light leading-relaxed">
-                            Transparência radical. Sem letrinhas miúdas, sem pegadinhas de renovação e sem anúncios chatos tirando sua atenção do trabalho.
+                        <p class="text-sm text-white/75">
+                            Sem letrinha miúda, sem pegadinha de renovação, sem anúncio tirando sua atenção do trabalho.
                         </p>
                     </div>
 
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-brand-amber font-title font-bold text-lg">
-                            <i class="ph-fill ph-lightning text-2xl"></i>
-                            <span>Utilidade de Guerra</span>
+                    <div>
+                        <div class="flex items-center gap-3 text-gerente-ambar gz-titulo text-lg mb-3">
+                            <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-raio"/></svg>
+                            <span>Utilidade de guerra</span>
                         </div>
-                        <p class="text-sm text-gray-300 font-light leading-relaxed">
-                            Se não funciona sem internet no subsolo de um prédio ou num sítio distante, não serve para o GerenteZ. Offline-first de verdade.
+                        <p class="text-sm text-white/75">
+                            Se não funciona no subsolo de um prédio ou num sítio distante, não serve para o GerenteZ.
                         </p>
                     </div>
 
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-brand-amber font-title font-bold text-lg">
-                            <i class="ph-fill ph-trend-up text-2xl"></i>
-                            <span>Foco no Lucro Real</span>
+                    <div>
+                        <div class="flex items-center gap-3 text-gerente-ambar gz-titulo text-lg mb-3">
+                            <svg class="gz-i text-2xl" aria-hidden="true"><use href="#i-alta"/></svg>
+                            <span>Foco no lucro real</span>
                         </div>
-                        <p class="text-sm text-gray-300 font-light leading-relaxed">
-                            Tudo no app existe para uma única finalidade: fazer você parar de perder dinheiro e ver a cor do seu lucro ao final de cada obra.
+                        <p class="text-sm text-white/75">
+                            Tudo no app existe para uma coisa só: você parar de perder dinheiro e ver a cor do seu lucro no fim da obra.
                         </p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <section id="preco" class="py-24 bg-brand-ice relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
-                <div class="grid md:grid-cols-5">
-                    
-                    <div class="md:col-span-3 p-10 md:p-12 bg-white">
-                        <h2 class="text-3xl font-black text-brand-slate mb-2 font-title">Plano Único. Sem Frescura.</h2>
-                        <p class="text-gray-500 mb-8 text-lg">O valor de um café com salgado por mês para profissionalizar de vez o seu negócio e parar de perder dinheiro.</p>
-                        
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center text-gray-700 font-medium">
-                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Controle financeiro com fotos de recibos
-                            </li>
-                            <li class="flex items-center text-gray-700 font-medium">
-                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Gestão visual de obras (Kanban)
-                            </li>
-                            <li class="flex items-center text-gray-700 font-medium">
-                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Agenda integrada com GPS e WhatsApp
-                            </li>
-                            <li class="flex items-center text-gray-700 font-medium">
-                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Funciona 100% sem internet
-                            </li>
-                            <li class="flex items-center text-gray-700 font-medium">
-                                <i class="ph-fill ph-check-circle text-brand-emerald text-xl mr-3"></i> Sem anúncios, sem letras miúdas
-                            </li>
-                        </ul>
-                    </div>
+    <div class="gz-regua" aria-hidden="true"></div>
 
-                    <div class="md:col-span-2 bg-brand-slate text-white p-10 md:p-12 flex flex-col justify-center items-center text-center">
-                        <p class="text-brand-amber font-title font-bold mb-2 uppercase tracking-widest text-sm">Apenas</p>
-                        <div class="flex items-start justify-center mb-6 font-display">
-                            <span class="text-2xl font-bold mt-2 mr-1 text-white/80">R$</span>
-                            <span class="text-7xl font-black text-white">20</span>
-                            <span class="text-xl text-white/60 self-end mb-2 ml-1">/mês</span>
-                        </div>
-                        <a href="https://app.gerentez.com.br/cadastro" class="w-full bg-brand-amber text-white py-4 px-6 rounded-xl font-title font-bold text-lg text-center hover:bg-yellow-500 transition transform hover:-translate-y-1 shadow-lg block">
-                            Assinar Agora
-                        </a>
-                        <p class="text-sm text-gray-400 mt-4"><i class="ph ph-lock mr-1"></i> Cancele quando quiser.</p>
-                    </div>
+    <!-- ================= LANÇAMENTO ================= -->
+    <section id="lancamento" class="py-24 bg-gerente-gelo">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+            <div class="bg-white rounded-painel border border-gerente-linha shadow-alto overflow-hidden">
+
+                <div class="p-8 sm:p-12">
+                    <span class="gz-rotulo text-gerente-mudo block mb-3">O lançamento</span>
+                    <h2 class="gz-display text-[26px] sm:text-4xl mb-4">Dia 1 de outubro o GerenteZ abre</h2>
+                    <p class="text-gerente-tinta text-[17px] sm:text-[22px] font-semibold mb-8">
+                        Entre na lista e receba o aviso no dia em que abrir. Sem compromisso.
+                    </p>
+
+                    <ul class="space-y-3 mb-9">
+                        <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
+                            <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                            Vai ter uma versão gratuita para começar
+                        </li>
+                        <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
+                            <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                            Instala pelo navegador — não precisa de loja de aplicativo
+                        </li>
+                        <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
+                            <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                            Funciona no celular que você já tem, com ou sem sinal
+                        </li>
+                        <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
+                            <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                            Quem entrar na lista fica sabendo dos valores antes de todo mundo
+                        </li>
+                    </ul>
+
+                    <!-- ============================================================
+                         AJUSTAR ANTES DE PUBLICAR
+                         Troque o action abaixo pelo endereço do seu serviço de lista
+                         (Mailchimp, Brevo, Formspree, Google Forms...). Enquanto o
+                         valor for "CONFIGURAR", o envio fica bloqueado por segurança.
+                         ============================================================ -->
+                    <form id="form-lista" class="flex flex-col sm:flex-row gap-3" method="post" action="CONFIGURAR">
+                        <label for="email-lista" class="sr-only">Seu e-mail</label>
+                        <input id="email-lista" name="email" type="email" required autocomplete="email"
+                               placeholder="seu@email.com.br"
+                               class="flex-1 bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
+                        <button type="submit" class="gz-btn shrink-0">Quero ser avisado</button>
+                    </form>
+                    <p id="aviso-lista" class="gz-rotulo text-gerente-mudo mt-4">Só o aviso do lançamento. Nada de spam.</p>
                 </div>
+
+                <div class="gz-prancha p-8 sm:p-12 text-white border-t border-white/10">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+                        <div class="flex-1">
+                            <span class="gz-rotulo text-white/50 block mb-2">Falta pouco</span>
+                            <span data-conta="dias" class="gz-num block text-[44px] font-black leading-none text-gerente-ambar">--</span>
+                            <span class="gz-rotulo text-white/60">dias para 1 de outubro</span>
+                        </div>
+                        <div class="flex-1 w-full">
+                            <div class="flex items-center justify-between gz-rotulo text-white/60 mb-2.5">
+                                <span>Contagem para o lançamento</span>
+                                <span data-conta="pct" class="gz-num text-gerente-ambar">--%</span>
+                            </div>
+                            <div class="gz-trena"><span data-conta="barra" style="width:0%"></span></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <div class="gz-regua gz-regua--claro" aria-hidden="true"></div>
+
+    <!-- ================= RODAPÉ ================= -->
+    <footer class="gz-prancha text-white/70 py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-black text-center mb-12 font-title text-brand-slate">Quem usa no batente, aprova:</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
-                    <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
-                    <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"Antes eu perdia as notinhas da loja de material no painel da picape e esquecia de cobrar do cliente. Agora bato foto na hora, lanço no app sem internet mesmo, e fecho o mês no azul. Simples e direto."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-slate text-white rounded-full flex items-center justify-center font-display font-bold text-xl">
-                            C
-                        </div>
-                        <div>
-                            <p class="font-bold text-brand-slate font-title">Carlos Eduardo</p>
-                            <p class="text-sm text-gray-500">Mestre de Obras</p>
-                        </div>
-                    </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+                <div class="flex items-center gap-2.5">
+                    <svg class="w-7 h-7 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
+                    <span class="gz-display text-xl text-white">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </div>
 
-                <div class="bg-brand-ice border border-gray-100 p-8 rounded-2xl relative shadow-sm">
-                    <i class="ph-fill ph-quotes text-5xl text-brand-slate/10 absolute top-4 right-6"></i>
-                    <p class="text-gray-600 text-lg italic mb-6 relative z-10 leading-relaxed">"O botão de abrir o GPS direto pro endereço do cliente já valeu os 20 reais. Não tem aquele monte de tela inútil que trava o celular. É abrir, ver o que tem pra fazer, e ir pro serviço."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-brand-slate text-white rounded-full flex items-center justify-center font-display font-bold text-xl">
-                            R
-                        </div>
-                        <div>
-                            <p class="font-bold text-brand-slate font-title">Roberto S.</p>
-                            <p class="text-sm text-gray-500">Eletricista Instalador</p>
-                        </div>
-                    </div>
+                <p class="gz-rotulo text-white/50 text-center">medindo cada obra, cada real</p>
+
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Instagram do GerenteZ" class="w-11 h-11 rounded-icone border border-white/15 flex items-center justify-center hover:border-gerente-ambar hover:text-gerente-ambar transition">
+                        <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-instagram"/></svg>
+                    </a>
+                    <a href="#" aria-label="WhatsApp do GerenteZ" class="w-11 h-11 rounded-icone border border-white/15 flex items-center justify-center hover:border-gerente-ambar hover:text-gerente-ambar transition">
+                        <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-mensagem"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <footer class="bg-brand-slate text-gray-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2">
-                    <i class="ph-fill ph-hammer text-brand-amber text-2xl"></i>
-                    <span class="font-display font-bold text-xl text-white tracking-tight">Gerente<span class="text-brand-amber">Z</span></span>
-                </div>
-                
-                <div class="text-sm text-center md:text-left">
-                    <p>&copy; 2026 GerenteZ App. Todos os direitos reservados.</p>
-                </div>
-
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition"><i class="ph ph-instagram-logo text-2xl"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="ph ph-whatsapp-logo text-2xl"></i></a>
-                </div>
-            </div>
-            
-            <div class="mt-8 text-xs text-center text-gray-500">
-                Feito para quem constrói o Brasil. Ordem Mínima, Resultado Máximo.
+            <div class="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+                <p>&copy; 2026 GerenteZ. Todos os direitos reservados.</p>
+                <p class="text-white/50">Gestão de obras, clientes e caixa na palma da mão.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Trava de segurança: impede envio enquanto a lista não tiver destino.
+        (function () {
+            var form = document.getElementById('form-lista');
+            if (!form || form.getAttribute('action') !== 'CONFIGURAR') return;
+
+            form.addEventListener('submit', function (evento) {
+                evento.preventDefault();
+                var aviso = document.getElementById('aviso-lista');
+                aviso.textContent = 'Cadastro ainda não liberado. Volte em 1 de outubro.';
+                aviso.classList.remove('text-gerente-mudo');
+                aviso.classList.add('text-gerente-ambar-texto');
+            });
+        })();
+
+        (function () {
+            // Lançamento: 1 de outubro de 2026, 00h00 (horário de Brasília)
+            var alvo = new Date('2026-10-01T00:00:00-03:00').getTime();
+            // Início da contagem: 1 de agosto de 2026 — usado só para a barra de progresso
+            var inicio = new Date('2026-08-01T00:00:00-03:00').getTime();
+
+            var campos = {};
+            ['dias', 'horas', 'min', 'seg', 'pct', 'barra'].forEach(function (k) {
+                campos[k] = document.querySelectorAll('[data-conta="' + k + '"]');
+            });
+
+            function escreve(chave, valor) {
+                campos[chave].forEach(function (el) { el.textContent = valor; });
+            }
+
+            function doisDigitos(n) { return n < 10 ? '0' + n : String(n); }
+
+            function atualiza() {
+                var falta = alvo - Date.now();
+
+                if (falta <= 0) {
+                    escreve('dias', '0'); escreve('horas', '00');
+                    escreve('min', '00'); escreve('seg', '00');
+                    escreve('pct', '100%');
+                    campos.barra.forEach(function (el) {
+                        el.style.width = '100%';
+                        el.setAttribute('data-cheia', '');
+                    });
+                    return false;
+                }
+
+                escreve('dias', String(Math.floor(falta / 86400000)));
+                escreve('horas', doisDigitos(Math.floor(falta % 86400000 / 3600000)));
+                escreve('min', doisDigitos(Math.floor(falta % 3600000 / 60000)));
+                escreve('seg', doisDigitos(Math.floor(falta % 60000 / 1000)));
+
+                var andamento = Math.min(100, Math.max(0,
+                    (Date.now() - inicio) / (alvo - inicio) * 100));
+                escreve('pct', Math.round(andamento) + '%');
+                campos.barra.forEach(function (el) { el.style.width = andamento + '%'; });
+
+                return true;
+            }
+
+            if (atualiza()) {
+                var relogio = setInterval(function () {
+                    if (!atualiza()) clearInterval(relogio);
+                }, 1000);
+            }
+        })();
+    </script>
 
 </body>
 </html>

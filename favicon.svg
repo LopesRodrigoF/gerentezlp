@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <pattern id="regua" width="51.2" height="512" patternUnits="userSpaceOnUse">
+      <rect width="8.5" height="512" fill="#152C39" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="512" height="512" rx="125" fill="#FFB400"/>
+  <rect width="512" height="512" rx="125" fill="url(#regua)"/>
+  <g transform="translate(119.5 119.5) scale(2.844)">
+    <circle cx="48" cy="48" r="34" fill="none" stroke="#152C39" stroke-width="9"/>
+    <circle cx="48" cy="14" r="6" fill="#152C39"/>
+    <rect x="44" y="30" width="8" height="26" rx="3" fill="#152C39"/>
+  </g>
+</svg>

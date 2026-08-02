@@ -769,17 +769,16 @@
                     <!-- ============================================================
                          Lista de espera via FormSubmit.
 
-                         1) O PRIMEIRO envio dispara um e-mail de ativação para o
-                            admingerentez@gmail.com. É preciso clicar no link dele
-                            uma vez — só depois o formulário passa a entregar.
+                         O action usa o token anônimo do FormSubmit, nunca o e-mail:
+                         assim o endereço de destino não fica exposto no código-fonte
+                         público nem é colhido por robôs de spam. O destino real vive
+                         só no painel do FormSubmit.
 
-                         2) DEPOIS DE ATIVAR: o FormSubmit gera um endereço aleatório
-                            (https://formsubmit.co/xxxxxxxxxxxx). Troque o action por
-                            ele. Assim o e-mail sai do código-fonte público e para de
-                            ser colhido por robôs de spam.
+                         Para mudar quem recebe, altere no painel — o token continua
+                         o mesmo e esta página não precisa ser tocada.
                          ============================================================ -->
                     <form id="form-lista" method="POST"
-                          action="https://formsubmit.co/admingerentez@gmail.com">
+                          action="https://formsubmit.co/04fa47535212d9007b4980710b19fb0f">
 
                         <input type="hidden" name="_subject" value="GerenteZ — nova inscrição na lista de espera">
                         <input type="hidden" name="_template" value="table">

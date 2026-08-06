@@ -1,0 +1,47 @@
+name: Publica o site no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Permite republicar pelo botao "Run workflow", sem precisar de commit novo.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Uma publicacao por vez. cancel-in-progress fica FALSO de proposito:
+# foi o cancelamento no meio do caminho que derrubou os deploys anteriores.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Baixa o repositorio
+        uses: actions/checkout@v7
+
+      - name: Prepara o Pages
+        uses: actions/configure-pages@v6
+
+      # O site e HTML estatico puro: sobe a pasta como esta, sem passar
+      # pelo Jekyll. O proprio action ja deixa .git e .github de fora.
+      - name: Empacota a pasta do site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
+      - name: Publica
+        id: deploy
+        uses: actions/deploy-pages@v5
+        with:
+          # Padrao do action e 600000 (10 min). Esse teto vinha abortando a
+          # implantacao enquanto ela ainda estava em deployment_in_progress.
+          timeout: 1800000

@@ -39,6 +39,11 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    // Aparelho pequeno (iPhone SE e afins) fica abaixo de 360px:
+                    // lá o cabeçalho mostra só a trena, sem o nome escrito.
+                    screens: {
+                        xs: '360px'
+                    },
                     colors: {
                         gerente: {
                             gelo:    '#F4F3EE',
@@ -174,6 +179,17 @@
             border-color: rgba(255,255,255,.3);
         }
         .gz-btn-2--escuro:hover { border-color: var(--gz-ambar); color: var(--gz-ambar); }
+
+        /* Item do menu do celular: alvo grande, do jeito que se usa na obra */
+        .gz-menu-link {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem .25rem;
+            font-weight: 700;
+            color: var(--gz-chumbo);
+            border-bottom: 1px solid var(--gz-linha);
+        }
+        .gz-menu-link:last-child { border-bottom: 0; }
+        .gz-menu-link:active { background: var(--gz-ambar-fraco); }
 
         /* Chave mensal/anual — o lado ativo vira placa de obra */
         .gz-ciclo {
@@ -330,6 +346,9 @@
             <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
             <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
             <symbol id="i-cadeado" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+            <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+            <symbol id="i-seta" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
             <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></symbol>
 
             <!-- Símbolo da marca: a trena -->
@@ -345,9 +364,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
 
-                <a href="#" class="flex items-center gap-2.5 shrink-0" aria-label="GerenteZ, página inicial">
-                    <svg class="w-8 h-8 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
-                    <span class="gz-display text-xl sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
+                <a href="#" class="flex items-center gap-2 sm:gap-2.5 shrink-0" aria-label="GerenteZ, página inicial">
+                    <svg class="w-7 h-7 sm:w-8 sm:h-8 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
+                    <span class="gz-display hidden xs:inline text-lg sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-gerente-tinta">
@@ -358,11 +377,31 @@
                     <a href="#lancamento" class="border-b-2 border-transparent hover:border-gerente-ambar hover:text-gerente-chumbo pb-1 transition">Lançamento</a>
                 </nav>
 
-                <a href="#lancamento" class="gz-btn text-[15px] sm:text-base !py-3 !px-5 sm:!px-6">
-                    <span class="sm:hidden">Avise-me</span>
-                    <span class="hidden sm:inline">Quero ser avisado</span>
-                </a>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="#lancamento" class="gz-btn text-[13px] xs:text-[14px] sm:text-base !py-3 !px-3.5 sm:!px-6">
+                        <span class="sm:hidden">Avise-me</span>
+                        <span class="hidden sm:inline">Quero ser avisado</span>
+                    </a>
+
+                    <button id="btn-menu" type="button"
+                            class="lg:hidden w-11 h-11 shrink-0 rounded-icone border border-gerente-linha bg-white text-gerente-chumbo flex items-center justify-center hover:border-gerente-chumbo transition"
+                            aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+                        <svg data-icone="abrir" class="gz-i text-2xl" aria-hidden="true"><use href="#i-menu"/></svg>
+                        <svg data-icone="fechar" class="gz-i text-2xl hidden" aria-hidden="true"><use href="#i-fechar"/></svg>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Menu do celular: some no lg, onde a navegacao de cima ja aparece -->
+        <div id="menu-mobile" class="lg:hidden hidden border-t border-gerente-linha bg-gerente-gelo">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-2" aria-label="Navegação principal">
+                <a href="#recursos" class="gz-menu-link">O que faz <svg class="gz-i text-lg text-gerente-mudo" aria-hidden="true"><use href="#i-seta"/></svg></a>
+                <a href="#diferenciais" class="gz-menu-link">Por que o GerenteZ <svg class="gz-i text-lg text-gerente-mudo" aria-hidden="true"><use href="#i-seta"/></svg></a>
+                <a href="#filosofia" class="gz-menu-link">Filosofia <svg class="gz-i text-lg text-gerente-mudo" aria-hidden="true"><use href="#i-seta"/></svg></a>
+                <a href="#planos" class="gz-menu-link">Planos <svg class="gz-i text-lg text-gerente-mudo" aria-hidden="true"><use href="#i-seta"/></svg></a>
+                <a href="#lancamento" class="gz-menu-link">Lançamento <svg class="gz-i text-lg text-gerente-mudo" aria-hidden="true"><use href="#i-seta"/></svg></a>
+            </nav>
         </div>
     </header>
 
@@ -1241,6 +1280,46 @@
     </footer>
 
     <script>
+        // Menu do celular.
+        (function () {
+            var botao  = document.getElementById('btn-menu');
+            var painel = document.getElementById('menu-mobile');
+            if (!botao || !painel) return;
+
+            var abrir  = botao.querySelector('[data-icone="abrir"]');
+            var fechar = botao.querySelector('[data-icone="fechar"]');
+
+            function mostra(aberto) {
+                painel.classList.toggle('hidden', !aberto);
+                abrir.classList.toggle('hidden', aberto);
+                fechar.classList.toggle('hidden', !aberto);
+                botao.setAttribute('aria-expanded', String(aberto));
+                botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+            }
+
+            botao.addEventListener('click', function () {
+                mostra(painel.classList.contains('hidden'));
+            });
+
+            // Tocou num link: a seção já vai rolar, o menu sai da frente.
+            painel.addEventListener('click', function (e) {
+                if (e.target.closest('a')) mostra(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !painel.classList.contains('hidden')) {
+                    mostra(false);
+                    botao.focus();
+                }
+            });
+
+            // Girar o aparelho ou voltar ao desktop com o menu aberto
+            // deixaria o painel preso embaixo da barra de navegação de cima.
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) mostra(false);
+            });
+        })();
+
         // Volta do FormSubmit: troca o formulário pela confirmação.
         (function () {
             if (!/[?&]inscrito=1/.test(location.search)) return;

@@ -42,7 +42,7 @@
             theme: {
                 extend: {
                     // Aparelho pequeno (iPhone SE e afins) fica abaixo de 360px:
-                    // lá o cabeçalho mostra só o selo, sem o nome escrito.
+                    // lá o botão do cabeçalho encolhe um ponto de tipo.
                     screens: {
                         xs: '360px'
                     },
@@ -372,9 +372,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
 
-                <a href="#" class="flex items-center gap-2 sm:gap-2.5 shrink-0" aria-label="GerenteZ, página inicial">
-                    <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-selo"/></svg>
-                    <span class="gz-display hidden xs:inline text-lg sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
+                <a href="#" class="flex items-center shrink-0" aria-label="GerenteZ, página inicial">
+                    <span class="gz-display text-lg sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-8 text-sm font-bold text-gerente-tinta">
@@ -1190,12 +1189,10 @@
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
 
-                <div class="flex items-center gap-2.5">
-                    <svg class="w-8 h-8" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-selo"/></svg>
+                <div class="flex flex-col items-center gap-2.5">
+                    <svg class="w-12 h-12" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-selo"/></svg>
                     <span class="gz-display text-xl text-white">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </div>
-
-                <p class="gz-rotulo text-white/50 text-center">Medindo cada obra, cada real</p>
 
                 <div class="flex gap-3">
                     <a href="#" aria-label="Instagram do GerenteZ" class="w-11 h-11 rounded-icone border border-white/15 flex items-center justify-center hover:border-gerente-ambar hover:text-gerente-ambar transition">

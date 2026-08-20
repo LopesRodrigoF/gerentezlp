@@ -97,11 +97,9 @@ body {
 .gz-marca {
     display: inline-flex;
     align-items: center;
-    gap: .625rem;
     text-decoration: none;
     color: var(--gz-chumbo);
 }
-.gz-marca svg { width: 1.75rem; height: 1.75rem; color: var(--gz-ambar); }
 .gz-marca span { font-size: 1.25rem; }
 .gz-marca .z { color: var(--gz-ambar); }
 

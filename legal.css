@@ -1,0 +1,239 @@
+/* Folha das páginas jurídicas (Política de Privacidade e Termos de Uso).
+   Documento para ser lido, não para vender: sem animação, sem CTA, sem cor
+   fora da paleta. Reaproveita as fichas técnicas do index.html. */
+
+:root {
+    --gz-ambar:        #FFB400;
+    --gz-ambar-fraco:  #FEF3D6;
+    --gz-ambar-texto:  #8A5B00;
+    --gz-chumbo:       #152C39;
+    --gz-chumbo-fundo: #0F222D;
+    --gz-gelo:         #F4F3EE;
+    --gz-tinta:        #5C6B75;
+    --gz-mudo:         #8A9199;
+    --gz-linha:        #E4E2D9;
+
+    --gz-fonte-display: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --gz-fonte-corpo:   ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--gz-fonte-corpo);
+    background: var(--gz-gelo);
+    color: var(--gz-chumbo);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Letreiro de obra: Archivo estendida, caixa alta. Nunca em parágrafo. */
+.gz-display {
+    font-family: var(--gz-fonte-display);
+    font-stretch: 125%;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    font-weight: 900;
+}
+
+.gz-titulo {
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    letter-spacing: -.015em;
+}
+
+.gz-rotulo {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    line-height: 1.4;
+}
+
+/* §8.1 Régua — divisor de assinatura */
+.gz-regua {
+    height: 11px;
+    background-repeat: repeat-x;
+    background-position: left bottom, left bottom;
+    background-image:
+        linear-gradient(90deg, #FFB400 0 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.3) 0 2px, transparent 2px);
+    background-size: 52px 11px, 11px 6px;
+}
+
+/* §8.3 Prancheta */
+.gz-prancha {
+    background-color: var(--gz-chumbo-fundo);
+    background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 26px 26px;
+}
+
+/* ---- Cabeçalho ---- */
+
+.gz-topo {
+    background: rgba(244,243,238,.95);
+    border-bottom: 1px solid var(--gz-linha);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+}
+
+.gz-topo-caixa {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.gz-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: .625rem;
+    text-decoration: none;
+    color: var(--gz-chumbo);
+}
+.gz-marca svg { width: 1.75rem; height: 1.75rem; color: var(--gz-ambar); }
+.gz-marca span { font-size: 1.25rem; }
+.gz-marca .z { color: var(--gz-ambar); }
+
+.gz-voltar {
+    color: var(--gz-tinta);
+    font-weight: 700;
+    font-size: .875rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: .125rem;
+}
+.gz-voltar:hover { color: var(--gz-chumbo); border-bottom-color: var(--gz-ambar); }
+
+/* ---- Documento ---- */
+
+.gz-doc {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.25rem 4rem;
+}
+
+.gz-doc-selo {
+    display: inline-block;
+    background: var(--gz-ambar-fraco);
+    color: var(--gz-ambar-texto);
+    border-radius: 6px;
+    padding: .35rem .6rem;
+    margin-bottom: 1.25rem;
+}
+
+.gz-doc h1 {
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    letter-spacing: -.02em;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 .75rem;
+}
+
+.gz-doc-data {
+    color: var(--gz-mudo);
+    font-size: .9rem;
+    margin: 0 0 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gz-linha);
+}
+
+.gz-doc h2 {
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    letter-spacing: -.015em;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    margin: 3rem 0 1rem;
+    scroll-margin-top: 6rem;
+}
+
+.gz-doc h3 {
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    font-size: 1.05rem;
+    margin: 2rem 0 .75rem;
+}
+
+.gz-doc p { margin: 0 0 1.1rem; }
+.gz-doc ul { margin: 0 0 1.1rem; padding-left: 1.25rem; }
+.gz-doc li { margin-bottom: .55rem; }
+.gz-doc strong { font-weight: 700; }
+
+.gz-doc a {
+    color: var(--gz-chumbo);
+    text-decoration: underline;
+    text-decoration-color: var(--gz-ambar);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+.gz-doc a:hover { color: var(--gz-ambar-texto); }
+
+.gz-doc hr {
+    border: 0;
+    border-top: 1px solid var(--gz-linha);
+    margin: 2.5rem 0;
+}
+
+/* Tabelas: rolam sozinhas no celular em vez de estourar a página */
+.gz-tabela-caixa {
+    overflow-x: auto;
+    margin: 0 0 1.5rem;
+    border: 1px solid var(--gz-linha);
+    border-radius: 12px;
+    background: #FFFFFF;
+}
+.gz-doc table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-size: .95rem;
+}
+.gz-doc th, .gz-doc td {
+    text-align: left;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--gz-linha);
+    vertical-align: top;
+}
+.gz-doc thead th {
+    background: #FFFFFF;
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--gz-tinta);
+}
+.gz-doc tbody tr:last-child td { border-bottom: 0; }
+
+/* ---- Rodapé ---- */
+
+.gz-rodape {
+    color: rgba(255,255,255,.7);
+    padding: 2.5rem 0;
+    font-size: .9rem;
+}
+.gz-rodape-caixa {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.gz-rodape a { color: #FFFFFF; text-decoration: none; }
+.gz-rodape a:hover { color: var(--gz-ambar); }
+.gz-rodape-links { display: flex; gap: 1.5rem; }

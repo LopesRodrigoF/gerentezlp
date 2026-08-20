@@ -31,6 +31,11 @@
       <rect x="0" y="10" width="4" height="12" fill="#FFFFFF" opacity="0.3"/>
     </pattern>
 
+    <!-- Canelado do selo: as ripas verticais do fundo ambar -->
+    <pattern id="canelado" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="9" height="26" fill="#000000" fill-opacity="0.06"/>
+    </pattern>
+
     <!-- Regua: traco maior ambar a cada 5 tracos -->
     <pattern id="reguaMaior" width="104" height="22" patternUnits="userSpaceOnUse">
       <rect x="0" y="0" width="4" height="22" fill="#FFB400"/>
@@ -40,12 +45,13 @@
   <rect width="1200" height="630" fill="#152C39"/>
   <rect width="1200" height="630" fill="url(#campoNoturno)"/>
 
-  <!-- Simbolo: a trena, ambar sobre chumbo.
-       Malha de 96x96 escalada 2,9299x — traco proporcional, nunca afinado. -->
-  <g transform="translate(600 202.2) scale(2.9299)">
-    <circle cx="0" cy="0" r="34" fill="none" stroke="#FFB400" stroke-width="9"/>
-    <circle cx="0" cy="-34" r="6" fill="#FFB400"/>
-    <rect x="-4" y="-18" width="8" height="26" rx="3" fill="#FFB400"/>
+  <!-- Simbolo: o selo do Z, ambar sobre chumbo.
+       Malha de 512x512 escalada 0,4297x — 220px de lado, centrado em x=600. -->
+  <g transform="translate(490 92) scale(0.4297)">
+    <rect width="512" height="512" rx="114" fill="#FFB400"/>
+    <rect width="512" height="512" rx="114" fill="url(#canelado)"/>
+    <path d="M104 88 H408 V152 L214 328 H408 V392 H104 V328 L298 152 H104 Z" fill="#152C39"/>
+    <rect x="104" y="408" width="304" height="30" rx="10" fill="#152C39"/>
   </g>
 
   <!-- Wordmark: Archivo 900, estendida 125%, caixa alta, com o Z ambar -->

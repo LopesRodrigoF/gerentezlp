@@ -20,6 +20,8 @@
     <meta name="author" content="GerenteZ">
     <meta name="theme-color" content="#152C39">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
@@ -40,7 +42,7 @@
             theme: {
                 extend: {
                     // Aparelho pequeno (iPhone SE e afins) fica abaixo de 360px:
-                    // lá o cabeçalho mostra só a trena, sem o nome escrito.
+                    // lá o cabeçalho mostra só o selo, sem o nome escrito.
                     screens: {
                         xs: '360px'
                     },
@@ -351,11 +353,17 @@
             <symbol id="i-seta" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
             <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></symbol>
 
-            <!-- Símbolo da marca: a trena -->
-            <symbol id="i-trena" viewBox="0 0 96 96">
-                <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" stroke-width="9"/>
-                <circle cx="48" cy="14" r="6" fill="currentColor" stroke="none"/>
-                <rect x="44" y="30" width="8" height="26" rx="3" fill="currentColor" stroke="none"/>
+            <!-- Canelado do selo: as ripas verticais do fundo âmbar -->
+            <pattern id="gz-canelado" width="26" height="26" patternUnits="userSpaceOnUse">
+                <rect width="9" height="26" fill="#000" fill-opacity=".06"/>
+            </pattern>
+
+            <!-- Símbolo da marca: o selo do Z -->
+            <symbol id="i-selo" viewBox="0 0 512 512">
+                <rect width="512" height="512" rx="114" fill="#FFB400"/>
+                <rect width="512" height="512" rx="114" fill="url(#gz-canelado)"/>
+                <path d="M104 88 H408 V152 L214 328 H408 V392 H104 V328 L298 152 H104 Z" fill="#152C39"/>
+                <rect x="104" y="408" width="304" height="30" rx="10" fill="#152C39"/>
             </symbol>
         </defs>
     </svg>
@@ -365,7 +373,7 @@
             <div class="flex justify-between items-center h-20">
 
                 <a href="#" class="flex items-center gap-2 sm:gap-2.5 shrink-0" aria-label="GerenteZ, página inicial">
-                    <svg class="w-7 h-7 sm:w-8 sm:h-8 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
+                    <svg class="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-selo"/></svg>
                     <span class="gz-display hidden xs:inline text-lg sm:text-2xl text-gerente-chumbo">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </a>
 
@@ -1183,7 +1191,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
 
                 <div class="flex items-center gap-2.5">
-                    <svg class="w-7 h-7 text-gerente-ambar" viewBox="0 0 96 96" aria-hidden="true"><use href="#i-trena"/></svg>
+                    <svg class="w-8 h-8" viewBox="0 0 512 512" aria-hidden="true"><use href="#i-selo"/></svg>
                     <span class="gz-display text-xl text-white">Gerente<span class="text-gerente-ambar">Z</span></span>
                 </div>
 

@@ -147,6 +147,24 @@ body {
     border-bottom: 1px solid var(--gz-linha);
 }
 
+/* Aviso do que mudou de uma versão para a outra. Fica antes do documento,
+   para quem já leu a anterior não precisar reler tudo para achar a diferença. */
+.gz-nota {
+    background: #FFFFFF;
+    border: 1px solid var(--gz-linha);
+    border-left: 4px solid var(--gz-ambar);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+    margin: 0 0 1.75rem;
+}
+.gz-nota p:last-child { margin-bottom: 0; }
+.gz-nota-titulo {
+    font-family: var(--gz-fonte-display);
+    font-weight: 900;
+    font-size: .95rem;
+    margin: 0 0 .6rem;
+}
+
 .gz-doc h2 {
     font-family: var(--gz-fonte-display);
     font-weight: 900;

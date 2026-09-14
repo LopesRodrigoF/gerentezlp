@@ -1,0 +1,10 @@
+# GerenteZ — regras para robôs de busca.
+#
+# Nada é bloqueado aqui, e isso é decisão, não esquecimento (D-MK.6):
+# os crawlers de IA ficam liberados de propósito. Antes de acrescentar
+# qualquer Disallow, revise essa decisão.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gerentez.com.br/sitemap.xml

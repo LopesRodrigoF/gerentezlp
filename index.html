@@ -1379,8 +1379,9 @@
         //                     lugar de onde ela partiu. Mostra por qual
         //                     porta a pessoa chegou até o formulário.
         //
-        // Nenhum dado pessoal vai junto: nem e-mail, nem WhatsApp, nem
-        // profissão. A Política de Privacidade (item 7) promete isso.
+        // O único dado que viaja junto é a profissão escolhida no select.
+        // E-mail e WhatsApp nunca saem daqui. A Política de Privacidade
+        // descreve exatamente isso no item 7 — mexeu num, mexa no outro.
         (function () {
             // Sem gtag não há o que medir — e o formulário segue nativo,
             // sem passar pelo desvio lá embaixo.
@@ -1424,6 +1425,9 @@
                 }
 
                 gtag('event', 'inscricao_lista', {
+                    // Categoria grossa, de uma lista de dez: diz qual ofício
+                    // chega primeiro, e não identifica ninguém.
+                    profissao:      form.profissao.value || 'nao informada',
                     event_callback: segue,
                     event_timeout:  800
                 });

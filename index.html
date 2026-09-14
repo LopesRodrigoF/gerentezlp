@@ -388,7 +388,7 @@
                 </nav>
 
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="#lancamento" class="gz-btn text-[13px] xs:text-[14px] sm:text-base !py-3 !px-3.5 sm:!px-6">
+                    <a href="#lancamento" data-cta="cabecalho" class="gz-btn text-[13px] xs:text-[14px] sm:text-base !py-3 !px-3.5 sm:!px-6">
                         <span class="sm:hidden">Avise-me</span>
                         <span class="hidden sm:inline">Quero ser avisado</span>
                     </a>
@@ -459,11 +459,11 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#lancamento" class="gz-btn text-base">
+                        <a href="#lancamento" data-cta="hero" class="gz-btn text-base">
                             <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
                             Quero ser avisado
                         </a>
-                        <a href="#recursos" class="gz-btn-2 gz-btn-2--escuro text-base">Funcionalidades</a>
+                        <a href="#recursos" data-cta="hero-funcionalidades" class="gz-btn-2 gz-btn-2--escuro text-base">Funcionalidades</a>
                     </div>
 
                     <ul class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-9 text-sm font-semibold text-white/75">
@@ -820,7 +820,7 @@
                         </li>
                     </ul>
 
-                    <a href="#lancamento" class="gz-btn-2 w-full">Começar grátis no lançamento</a>
+                    <a href="#lancamento" data-cta="plano-gratis" class="gz-btn-2 w-full">Começar grátis no lançamento</a>
                 </div>
 
                 <!-- ---------- BÁSICO ---------- -->
@@ -865,7 +865,7 @@
                             </li>
                         </ul>
 
-                        <a href="#lancamento" class="gz-btn w-full">Quero ser avisado</a>
+                        <a href="#lancamento" data-cta="plano-basico" class="gz-btn w-full">Quero ser avisado</a>
                     </div>
                 </div>
 
@@ -1367,6 +1367,71 @@
                     if (!atualiza()) clearInterval(relogio);
                 }, 1000);
             }
+        })();
+
+        // ================== Eventos de conversão (GA4) ==================
+        //
+        //   inscricao_lista — envio do formulário da lista de espera. É a
+        //                     conversão da página; no painel do GA4 ela
+        //                     precisa ser marcada como evento-chave.
+        //
+        //   clique_cta      — clique em cada chamada para ação, junto do
+        //                     lugar de onde ela partiu. Mostra por qual
+        //                     porta a pessoa chegou até o formulário.
+        //
+        // Nenhum dado pessoal vai junto: nem e-mail, nem WhatsApp, nem
+        // profissão. A Política de Privacidade (item 7) promete isso.
+        (function () {
+            // Sem gtag não há o que medir — e o formulário segue nativo,
+            // sem passar pelo desvio lá embaixo.
+            if (typeof gtag !== 'function') return;
+
+            // ---------- Cliques nos CTAs ----------
+            // Um ouvinte só, no documento: os botões são âncoras internas,
+            // ninguém sai da página e o evento sempre tem tempo de sair.
+            document.addEventListener('click', function (e) {
+                var cta = e.target.closest('[data-cta]');
+                if (!cta) return;
+
+                gtag('event', 'clique_cta', {
+                    cta_local:   cta.dataset.cta,
+                    cta_destino: cta.getAttribute('href') || ''
+                });
+            });
+
+            // ---------- Envio da lista de espera ----------
+            var form = document.getElementById('form-lista');
+            if (!form) return;
+
+            var partiu = false;
+
+            form.addEventListener('submit', function (e) {
+                // O FormSubmit tira a pessoa da página. Se o POST seguir no
+                // mesmo instante, o evento pode morrer antes de sair — ainda
+                // mais porque o gtag.js carrega async e pode nem ter chegado.
+                // Então seguramos o envio até o GA confirmar, ou 1 segundo,
+                // o que vier primeiro.
+                e.preventDefault();
+                if (partiu) return;      // clique repetido: o primeiro já está a caminho
+                partiu = true;
+
+                var seguiu = false;
+
+                function segue() {
+                    if (seguiu) return;
+                    seguiu = true;
+                    form.submit();       // submit() não redispara este ouvinte
+                }
+
+                gtag('event', 'inscricao_lista', {
+                    event_callback: segue,
+                    event_timeout:  800
+                });
+
+                // Rede de segurança: com bloqueador de anúncio o callback
+                // nunca vem, e a inscrição não pode ficar presa por isso.
+                setTimeout(segue, 1000);
+            });
         })();
     </script>
 

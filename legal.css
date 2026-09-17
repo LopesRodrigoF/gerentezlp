@@ -183,9 +183,22 @@ body {
 }
 
 .gz-doc p { margin: 0 0 1.1rem; }
-.gz-doc ul { margin: 0 0 1.1rem; padding-left: 1.25rem; }
+.gz-doc ul, .gz-doc ol { margin: 0 0 1.1rem; padding-left: 1.25rem; }
 .gz-doc li { margin-bottom: .55rem; }
 .gz-doc strong { font-weight: 700; }
+
+/* Trecho literal no meio da frase (domínio, caminho). O font-size vai
+   explicitado porque o navegador encolhe o que é monoespaçado, e a 17px
+   de corpo a diferença fica visível. */
+.gz-doc code {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: .9em;
+    background: #FFFFFF;
+    border: 1px solid var(--gz-linha);
+    border-radius: 5px;
+    padding: .1em .35em;
+    white-space: nowrap;
+}
 
 .gz-doc a {
     color: var(--gz-chumbo);
@@ -201,6 +214,10 @@ body {
     border-top: 1px solid var(--gz-linha);
     margin: 2.5rem 0;
 }
+
+/* O documento gerado abre cada seção com um <hr>. Sem isto, a margem da
+   régua e a do título se somam e o vão dobra 15 vezes por página. */
+.gz-doc hr + h2 { margin-top: 2rem; }
 
 /* Tabelas: rolam sozinhas no celular em vez de estourar a página */
 .gz-tabela-caixa {

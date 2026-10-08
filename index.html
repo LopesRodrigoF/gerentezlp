@@ -15,7 +15,7 @@
     </script>
 
     <title>GerenteZ — App de gestão de obras e orçamento para autônomo</title>
-    <meta name="description" content="O escritório de bolso do prestador de serviço. Obras, clientes e caixa na palma da mão — e funciona sem internet no canteiro. Em fase de testes: entre na lista.">
+    <meta name="description" content="O escritório de bolso do prestador de serviço. Obras, clientes e caixa na palma da mão — e funciona sem internet no canteiro. Em versão de teste: crie sua conta grátis.">
     <meta name="author" content="GerenteZ">
     <meta name="theme-color" content="#152C39">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,7 +30,7 @@
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://www.gerentez.com.br/">
     <meta property="og:title" content="GerenteZ | App de gestão de obras em fase de testes">
-    <meta property="og:description" content="Obras, clientes e caixa em um lugar só. Funciona sem internet no canteiro. Entre na lista e teste antes de todo mundo.">
+    <meta property="og:description" content="Obras, clientes e caixa em um lugar só. Funciona sem internet no canteiro. Está em teste e é grátis: crie sua conta.">
     <meta property="og:image" content="https://www.gerentez.com.br/capa-social.png">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -388,9 +388,15 @@
                 </nav>
 
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <a href="#lancamento" data-cta="cabecalho" class="gz-btn text-[13px] xs:text-[14px] sm:text-base !py-3 !px-3.5 sm:!px-6">
-                        <span class="sm:hidden">Testar</span>
-                        <span class="hidden sm:inline">Quero testar</span>
+                    <!-- data-cadastro: o botão leva ao cadastro do app. O script do
+                         fim da página acrescenta ao link os utm_* que a visita
+                         trouxe; sem JavaScript, o href daqui já funciona. -->
+                    <a href="https://app.gerentez.com.br/?cadastro=1" data-cta="cabecalho" data-cadastro class="gz-btn text-[13px] xs:text-[14px] sm:text-base !py-3 !px-3.5 sm:!px-6">
+                        <!-- Três tamanhos: abaixo de 360px "Criar conta" quebra em duas
+                             linhas ao lado do logo e do menu, e fica o rótulo curto. -->
+                        <span class="xs:hidden">Testar</span>
+                        <span class="hidden xs:inline sm:hidden">Criar conta</span>
+                        <span class="hidden sm:inline">Criar conta grátis</span>
                     </a>
 
                     <button id="btn-menu" type="button"
@@ -425,7 +431,7 @@
                 <div class="min-w-0">
                     <p class="inline-flex flex-wrap items-center gap-2 gz-rotulo text-gerente-ambar bg-gerente-ambar/15 border border-gerente-ambar/40 rounded-selo px-3 py-2 mb-6">
                         <svg class="gz-i text-base" aria-hidden="true"><use href="#i-pessoas"/></svg>
-                        Fase de testes · entrada por convite
+                        Versão de teste · cadastro aberto
                     </p>
 
                     <h1 class="gz-display text-[34px] sm:text-5xl xl:text-[56px] leading-[1.05] mb-4">
@@ -439,22 +445,28 @@
                     </p>
 
                     <!-- Onde ficava a contagem: o estado do app agora, sem data a vencer.
-                         O ponto é âmbar como o "Em obra" do app — andamento, não pronto. -->
+                         O ponto é âmbar como o "Em obra" do app — andamento, não pronto.
+
+                         As três coisas que a F36 manda dizer antes do botão (RF-36.60):
+                         é teste, é grátis, e o que ganha quem entra agora. O número de
+                         meses é o dos Termos de Uso, item 4.3 — mexeu lá, mexa aqui. -->
                     <div class="flex items-start gap-3 max-w-md bg-white/[.07] border border-white/15 rounded-ficha px-4 py-3.5 mb-9">
                         <span class="relative flex w-2.5 h-2.5 mt-[7px] shrink-0" aria-hidden="true">
                             <span class="absolute inset-0 rounded-full bg-gerente-ambar opacity-75 animate-ping"></span>
                             <span class="relative w-2.5 h-2.5 rounded-full bg-gerente-ambar"></span>
                         </span>
                         <p class="text-[15px] text-white/75">
-                            <strong class="text-white">O app já está em teste com um grupo fechado.</strong>
-                            Novas vagas abrem aos poucos: entre na lista e a gente te chama.
+                            <strong class="text-white">O app está em teste, e é grátis.</strong>
+                            Pode faltar coisa e aparecer defeito. Quem cria a conta agora tem
+                            <strong class="text-white">6 meses do plano Básico sem custo</strong>
+                            quando a cobrança começar.
                         </p>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#lancamento" data-cta="hero" class="gz-btn text-base">
+                        <a href="https://app.gerentez.com.br/?cadastro=1" data-cta="hero" data-cadastro class="gz-btn text-base">
                             <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
-                            Quero testar
+                            Criar conta grátis
                         </a>
                         <a href="#recursos" data-cta="hero-funcionalidades" class="gz-btn-2 gz-btn-2--escuro text-base">Funcionalidades</a>
                     </div>
@@ -773,6 +785,20 @@
                 </button>
             </div>
 
+            <!-- O que vale HOJE, antes dos dois cartões. Os preços abaixo são os de
+                 quando a cobrança começar; sem esta faixa, "R$ 24,90 por mês" ao
+                 lado de "crie sua conta grátis" lê como pegadinha. As três frases
+                 são as dos Termos de Uso, itens 4.1 e 4.3. -->
+            <div class="flex items-start gap-3 bg-gerente-ambar-fraco border border-gerente-ambar/40 rounded-cartao p-5 sm:p-6 mb-8">
+                <svg class="gz-i text-2xl text-gerente-ambar-texto shrink-0 mt-0.5" aria-hidden="true"><use href="#i-etiqueta"/></svg>
+                <p class="text-gerente-chumbo">
+                    <strong>Durante o período de teste, tudo isto é grátis.</strong>
+                    A cobrança ainda não começou, e ninguém será cobrado sem escolher assinar.
+                    Quem cria a conta agora tem <strong>6 meses do plano Básico sem custo</strong>,
+                    contados do dia em que ela começar.
+                </p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-6 mb-16">
 
                 <!-- ---------- GRÁTIS ---------- -->
@@ -788,7 +814,7 @@
                         <span class="gz-num text-[44px] font-black leading-none text-gerente-chumbo">R$ 0</span>
                         <span class="gz-num text-lg font-bold text-gerente-tinta pb-1">para sempre</span>
                     </div>
-                    <p class="gz-rotulo text-gerente-mudo mb-7">Sem cartão, sem prazo de teste</p>
+                    <p class="gz-rotulo text-gerente-mudo mb-7">Sem cartão, sem prazo para acabar</p>
 
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-start gap-3 text-gerente-chumbo">
@@ -813,7 +839,7 @@
                         </li>
                     </ul>
 
-                    <a href="#lancamento" data-cta="plano-gratis" class="gz-btn-2 w-full">Entrar na lista de testes</a>
+                    <a href="https://app.gerentez.com.br/?cadastro=1" data-cta="plano-gratis" data-cadastro class="gz-btn-2 w-full">Criar conta grátis</a>
                 </div>
 
                 <!-- ---------- BÁSICO ---------- -->
@@ -858,7 +884,7 @@
                             </li>
                         </ul>
 
-                        <a href="#lancamento" data-cta="plano-basico" class="gz-btn w-full">Quero testar</a>
+                        <a href="https://app.gerentez.com.br/?cadastro=1" data-cta="plano-basico" data-cadastro class="gz-btn w-full">Usar grátis durante o teste</a>
                     </div>
                 </div>
 
@@ -1054,15 +1080,19 @@
 
                 <div class="p-8 sm:p-12">
                     <span class="gz-rotulo text-gerente-mudo block mb-3">Fase de testes</span>
-                    <h2 class="gz-display text-[26px] sm:text-4xl mb-4">Teste o GerenteZ antes de todo mundo</h2>
+                    <h2 class="gz-display text-[26px] sm:text-4xl mb-4">Crie sua conta e teste o GerenteZ</h2>
                     <p class="text-gerente-tinta text-[17px] sm:text-[22px] font-semibold mb-8">
-                        O app já está em teste com um grupo fechado, e novas vagas abrem aos poucos. Deixe seu e-mail e a gente te chama quando abrir a sua. Sem compromisso.
+                        O app está em versão de teste, aberta a quem quiser usar. Funciona de verdade — e pode faltar coisa e aparecer defeito. É para descobrir isso que o teste existe.
                     </p>
 
                     <ul class="space-y-3 mb-9">
                         <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
                             <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
-                            Plano grátis para sempre, sem cartão e sem prazo de teste
+                            Grátis durante todo o teste, com tudo liberado e sem cartão
+                        </li>
+                        <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
+                            <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
+                            <span>Quem cria a conta agora tem 6 meses do plano Básico sem custo, contados de quando a cobrança começar — <a href="#planos" class="underline decoration-gerente-ambar decoration-2 underline-offset-4 hover:text-gerente-ambar-texto">veja os planos</a></span>
                         </li>
                         <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
                             <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
@@ -1070,115 +1100,44 @@
                         </li>
                         <li class="flex items-start gap-3 text-gerente-chumbo font-semibold">
                             <svg class="gz-i text-xl text-gerente-verde-escuro mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>
-                            Quer acesso completo? Básico por R$ 24,90 por mês — <a href="#planos" class="underline decoration-gerente-ambar decoration-2 underline-offset-4 hover:text-gerente-ambar-texto">veja os planos</a>
+                            Achou defeito ou sentiu falta de algo? Dentro do app você fala direto com quem faz
                         </li>
                     </ul>
 
-                    <!-- ============================================================
-                         Lista de espera via FormSubmit.
-
-                         O action usa o token anônimo do FormSubmit, nunca o e-mail:
-                         assim o endereço de destino não fica exposto no código-fonte
-                         público nem é colhido por robôs de spam. O destino real vive
-                         só no painel do FormSubmit.
-
-                         Para mudar quem recebe, altere no painel — o token continua
-                         o mesmo e esta página não precisa ser tocada.
-                         ============================================================ -->
-                    <form id="form-lista" method="POST"
-                          action="https://formsubmit.co/04fa47535212d9007b4980710b19fb0f">
-
-                        <input type="hidden" name="_subject" value="GerenteZ — nova inscrição na lista de espera">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://www.gerentez.com.br/?inscrito=1">
-                        <!-- O cadastro do app só aceita e-mail liberado, e confere pelo endereço:
-                             por isso a resposta pede o mesmo e-mail na hora de criar a conta. -->
-                        <input type="hidden" name="_autoresponse" value="Beleza! Você entrou na lista do GerenteZ. O app está em teste com um grupo fechado e as vagas abrem aos poucos. Quando abrir a sua, a gente te chama — e na hora de criar a conta, use este mesmo e-mail. Até lá, nada de spam. — Equipe GerenteZ">
-
-                        <!-- Isca para robôs: fica escondida, gente nunca preenche -->
-                        <input type="text" name="_honey" tabindex="-1" autocomplete="off"
-                               aria-hidden="true" class="hidden">
-
-                        <div class="grid sm:grid-cols-2 gap-4">
-
-                            <div class="sm:col-span-2">
-                                <label for="campo-email" class="gz-rotulo text-gerente-tinta block mb-2">
-                                    Seu e-mail <span class="text-gerente-ambar-texto">(obrigatório)</span>
-                                </label>
-                                <input id="campo-email" name="email" type="email" required autocomplete="email"
-                                       placeholder="joao.pintor@email.com.br"
-                                       class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
-                            </div>
-
-                            <div>
-                                <label for="campo-profissao" class="gz-rotulo text-gerente-tinta block mb-2">
-                                    Sua profissão <span class="text-gerente-mudo">(opcional)</span>
-                                </label>
-                                <select id="campo-profissao" name="profissao"
-                                        class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo focus:border-gerente-ambar outline-none">
-                                    <option value="">Prefiro não dizer</option>
-                                    <option>Pedreiro</option>
-                                    <option>Pintor</option>
-                                    <option>Eletricista</option>
-                                    <option>Encanador</option>
-                                    <option>Marceneiro</option>
-                                    <option>Montador</option>
-                                    <option>Jardineiro</option>
-                                    <option>Técnico de manutenção</option>
-                                    <option>Mestre de obras</option>
-                                    <option>Outro serviço</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="campo-whatsapp" class="gz-rotulo text-gerente-tinta block mb-2">
-                                    WhatsApp <span class="text-gerente-mudo">(opcional)</span>
-                                </label>
-                                <input id="campo-whatsapp" name="whatsapp" type="tel" autocomplete="tel"
-                                       inputmode="tel" placeholder="(11) 90000-0000"
-                                       class="w-full bg-white border-[1.5px] border-gerente-linha rounded-campo px-5 py-4 text-gerente-chumbo placeholder:text-gerente-inativo focus:border-gerente-ambar outline-none">
-                            </div>
-
-                            <div class="sm:col-span-2">
-                                <button type="submit" class="gz-btn w-full sm:w-auto">
-                                    <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
-                                    Quero testar
-                                </button>
-                            </div>
-
-                        </div>
-                    </form>
-
-                    <!-- Confirmação: aparece quando o FormSubmit devolve para ?inscrito=1 -->
-                    <div id="ok-lista" class="hidden items-start gap-4 bg-gerente-verde-fraco border border-gerente-verde/30 rounded-cartao p-6">
-                        <svg class="gz-i text-3xl text-gerente-verde-escuro shrink-0" aria-hidden="true"><use href="#i-check"/></svg>
-                        <div>
-                            <p class="gz-titulo text-xl text-gerente-chumbo mb-1">Pronto, você está na lista.</p>
-                            <p class="text-gerente-tinta">Quando abrir a sua vaga, a gente te chama. Na hora de criar a conta, use este mesmo e-mail: é ele que libera a sua entrada. Até lá, nada de spam.</p>
-                        </div>
-                    </div>
+                    <!-- Aqui ficava o formulário da lista de espera. Saiu na F36
+                         (D-36.8): a lista existia para um aviso que não será enviado,
+                         e o cadastro passou a ser aberto. A página não tem mais
+                         formulário nenhum, e não manda dado de ninguém a terceiro. -->
+                    <a href="https://app.gerentez.com.br/?cadastro=1" data-cta="fase-de-testes" data-cadastro class="gz-btn w-full sm:w-auto">
+                        <svg class="gz-i text-xl" aria-hidden="true"><use href="#i-celular"/></svg>
+                        Criar conta grátis
+                    </a>
+                    <p class="text-sm text-gerente-tinta mt-4">
+                        Leva um minuto. Ao criar a conta você aceita os
+                        <a href="termos.html" class="underline underline-offset-4 hover:text-gerente-chumbo">Termos de Uso</a> e a
+                        <a href="privacidade.html" class="underline underline-offset-4 hover:text-gerente-chumbo">Política de Privacidade</a>.
+                    </p>
                 </div>
 
-                <!-- Como a lista vira acesso. Nenhuma data e nenhuma ordem de chegada
-                     prometidas: as vagas saem conforme o teste aguenta. -->
+                <!-- Como o teste funciona, em três passos. Nenhuma data prometida:
+                     o teste acaba quando o app estiver pronto, e o próprio app avisa. -->
                 <div class="gz-prancha p-8 sm:p-12 text-white border-t border-white/10">
-                    <span class="gz-rotulo text-white/50 block mb-6">Como funciona a entrada</span>
+                    <span class="gz-rotulo text-white/50 block mb-6">Como funciona o teste</span>
                     <ol class="grid sm:grid-cols-3 gap-7 sm:gap-8">
                         <li>
                             <span class="gz-num block text-[44px] font-black leading-none text-gerente-ambar mb-3">1</span>
-                            <p class="font-bold text-white mb-1">Você entra na lista</p>
-                            <p class="text-sm text-white/60">Só o e-mail é obrigatório. Leva meio minuto.</p>
+                            <p class="font-bold text-white mb-1">Você cria a conta</p>
+                            <p class="text-sm text-white/60">No navegador do celular, com o seu e-mail. Não precisa de convite nem de cartão.</p>
                         </li>
                         <li>
                             <span class="gz-num block text-[44px] font-black leading-none text-gerente-ambar mb-3">2</span>
-                            <p class="font-bold text-white mb-1">As vagas abrem aos poucos</p>
-                            <p class="text-sm text-white/60">Poucas de cada vez: assim cada um tem atenção de verdade, e o app melhora com o que você conta.</p>
+                            <p class="font-bold text-white mb-1">Usa nas suas obras</p>
+                            <p class="text-sm text-white/60">Com tudo liberado. Dá para instalar na tela inicial, e continua funcionando sem sinal.</p>
                         </li>
                         <li>
                             <span class="gz-num block text-[44px] font-black leading-none text-gerente-ambar mb-3">3</span>
-                            <p class="font-bold text-white mb-1">Chegou a sua vez, você cria a conta</p>
-                            <p class="text-sm text-white/60">Com o mesmo e-mail da lista — é ele que libera a sua entrada.</p>
+                            <p class="font-bold text-white mb-1">Conta o que achou</p>
+                            <p class="text-sm text-white/60">A faixa “Versão de teste”, no topo do app, abre uma conversa direto com quem faz. É assim que ele melhora.</p>
                         </li>
                     </ol>
                 </div>
@@ -1262,22 +1221,6 @@
             });
         })();
 
-        // Volta do FormSubmit: troca o formulário pela confirmação.
-        (function () {
-            if (!/[?&]inscrito=1/.test(location.search)) return;
-
-            var form = document.getElementById('form-lista');
-            var ok = document.getElementById('ok-lista');
-            if (!form || !ok) return;
-
-            form.classList.add('hidden');
-            ok.classList.remove('hidden');
-            ok.classList.add('flex');
-            ok.setAttribute('tabindex', '-1');
-            ok.focus({ preventScroll: true });
-            ok.scrollIntoView({ block: 'center' });
-        })();
-
         // Chave mensal/anual do plano Básico.
         // O preço fica aqui e no HTML (mensal) para a página nascer certa sem JS.
         (function () {
@@ -1321,72 +1264,80 @@
             });
         })();
 
-        // ================== Eventos de conversão (GA4) ==================
+        // ============ O botão de criar conta leva a origem junto ============
         //
-        //   inscricao_lista — envio do formulário da lista de espera. É a
-        //                     conversão da página; no painel do GA4 ela
-        //                     precisa ser marcada como evento-chave.
+        // Quem chega por um anúncio traz utm_source, utm_medium e companhia na
+        // barra de endereço. O botão repassa esses mesmos parâmetros ao app,
+        // sem inventar nenhum: link interno com UTM próprio apagaria a origem
+        // de verdade ("veio da Meta") e escreveria "veio da landing" por cima.
         //
-        //   clique_cta      — clique em cada chamada para ação, junto do
-        //                     lugar de onde ela partiu. Mostra por qual
-        //                     porta a pessoa chegou até o formulário.
+        // Site e app usam a mesma propriedade do GA4 e são subdomínios da
+        // mesma raiz, então a jornada já atravessa sozinha. O repasse é a
+        // segunda corda: vale quando o cookie não atravessa — navegador que
+        // bloqueia, ou link que abre em outro aplicativo.
         //
-        // O único dado que viaja junto é a profissão escolhida no select.
-        // E-mail e WhatsApp nunca saem daqui. A Política de Privacidade
-        // descreve exatamente isso no item 7 — mexeu num, mexa no outro.
+        // Só utm_*. Identificador de clique de anúncio (fbclid, gclid) fica
+        // aqui: é rastro de uma pessoa, não origem de uma visita.
+        //
+        // Sem JavaScript nada disto roda, e o href do botão já leva ao
+        // cadastro do mesmo jeito.
         (function () {
-            // Sem gtag não há o que medir — e o formulário segue nativo,
-            // sem passar pelo desvio lá embaixo.
+            var botoes = document.querySelectorAll('a[data-cadastro]');
+            if (!botoes.length || typeof URLSearchParams !== 'function') return;
+
+            var chegada = new URLSearchParams(location.search);
+            var origem = [];
+            chegada.forEach(function (valor, chave) {
+                if (/^utm_[a-z]+$/.test(chave) && valor && valor.length <= 100) {
+                    origem.push([chave, valor]);
+                }
+            });
+            if (!origem.length) return;
+
+            botoes.forEach(function (botao) {
+                try {
+                    var destino = new URL(botao.href);
+                    origem.forEach(function (par) { destino.searchParams.set(par[0], par[1]); });
+                    botao.href = destino.toString();
+                } catch (erro) {
+                    // URL que o navegador não soube montar: o href original fica.
+                }
+            });
+        })();
+
+        // ================== Evento de clique (GA4) ==================
+        //
+        //   clique_cta — clique em cada chamada para ação, junto do lugar de
+        //                onde ela partiu. Mostra por qual porta a pessoa foi
+        //                para o cadastro.
+        //
+        // A conversão deixou de morar nesta página: é o `cadastro_concluido`,
+        // que o app emite na mesma propriedade. O `inscricao_lista` saiu junto
+        // com o formulário (F36) — no painel do GA4 ele precisa ser desmarcado
+        // como evento principal.
+        //
+        // Nenhum dado de ninguém viaja nestes eventos: só de qual botão partiu
+        // o clique e para onde ele leva.
+        (function () {
             if (typeof gtag !== 'function') return;
 
-            // ---------- Cliques nos CTAs ----------
-            // Um ouvinte só, no documento: os botões são âncoras internas,
-            // ninguém sai da página e o evento sempre tem tempo de sair.
+            // Um ouvinte só, no documento. Os botões de cadastro tiram a pessoa
+            // da página, e o clique não é segurado para esperar o evento: o GA4
+            // envia por beacon, que sobrevive à troca de página. O que se perde
+            // é o clique dado antes de o gtag.js terminar de carregar — e
+            // segurar o botão por isso atrasaria todo mundo que usa bloqueador,
+            // para quem o evento nunca sai.
             document.addEventListener('click', function (e) {
                 var cta = e.target.closest('[data-cta]');
                 if (!cta) return;
 
                 gtag('event', 'clique_cta', {
                     cta_local:   cta.dataset.cta,
-                    cta_destino: cta.getAttribute('href') || ''
+                    // "cadastro", e não o endereço: o href leva os utm_* da
+                    // visita, e cada combinação viraria um destino diferente
+                    // no relatório.
+                    cta_destino: cta.hasAttribute('data-cadastro') ? 'cadastro' : (cta.getAttribute('href') || '')
                 });
-            });
-
-            // ---------- Envio da lista de espera ----------
-            var form = document.getElementById('form-lista');
-            if (!form) return;
-
-            var partiu = false;
-
-            form.addEventListener('submit', function (e) {
-                // O FormSubmit tira a pessoa da página. Se o POST seguir no
-                // mesmo instante, o evento pode morrer antes de sair — ainda
-                // mais porque o gtag.js carrega async e pode nem ter chegado.
-                // Então seguramos o envio até o GA confirmar, ou 1 segundo,
-                // o que vier primeiro.
-                e.preventDefault();
-                if (partiu) return;      // clique repetido: o primeiro já está a caminho
-                partiu = true;
-
-                var seguiu = false;
-
-                function segue() {
-                    if (seguiu) return;
-                    seguiu = true;
-                    form.submit();       // submit() não redispara este ouvinte
-                }
-
-                gtag('event', 'inscricao_lista', {
-                    // Categoria grossa, de uma lista de dez: diz qual ofício
-                    // chega primeiro, e não identifica ninguém.
-                    profissao:      form.profissao.value || 'nao informada',
-                    event_callback: segue,
-                    event_timeout:  800
-                });
-
-                // Rede de segurança: com bloqueador de anúncio o callback
-                // nunca vem, e a inscrição não pode ficar presa por isso.
-                setTimeout(segue, 1000);
             });
         })();
     </script>

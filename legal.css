@@ -269,4 +269,4 @@ body {
 }
 .gz-rodape a { color: #FFFFFF; text-decoration: none; }
 .gz-rodape a:hover { color: var(--gz-ambar); }
-.gz-rodape-links { display: flex; gap: 1.5rem; }
+.gz-rodape-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }

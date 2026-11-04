@@ -270,3 +270,26 @@ body {
 .gz-rodape a { color: #FFFFFF; text-decoration: none; }
 .gz-rodape a:hover { color: var(--gz-ambar); }
 .gz-rodape-links { display: flex; gap: 1.5rem; }
+
+/* Os mesmos ícones Lucide do rodapé do index.html, desenhados inline
+   porque aqui não há a folha de símbolos. */
+.gz-rodape-redes { display: flex; gap: .75rem; }
+.gz-rodape-redes a {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gz-rodape-redes a:hover { border-color: var(--gz-ambar); }
+.gz-rodape-redes svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
